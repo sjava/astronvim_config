@@ -102,7 +102,6 @@ return {
       -- this would disable semanticTokensProvider for all clients
       -- client.server_capabilities.semanticTokensProvider = nil
       if client.name == "rust-analyzer" then
-        require("lsp-inlayhints").on_attach(client, bufnr)
         vim.keymap.set(
           "n",
           "<Leader>la",

@@ -80,7 +80,7 @@ return {
   },
   {
     "vxpm/ferris.nvim",
-    ft= "rust",
+    ft = "rust",
     opts = { create_commands = false },
   },
   {
@@ -111,14 +111,6 @@ return {
           RgFlowInputPattern = { link = "NormalFloat" },
         },
       }
-    end,
-  },
-  {
-    "carbon-steel/detour.nvim",
-    event = "User AstroFile",
-    config = function()
-      vim.keymap.set("n", "<c-w><enter>", ":Detour<cr>")
-      vim.keymap.set("n", "<c-w>.", ":DetourCurrentWindow<cr>")
     end,
   },
   {
@@ -449,6 +441,14 @@ return {
     dependencies = "nvim-treesitter/nvim-treesitter",
     ft = { "markdown" },
     config = true,
+  },
+  {
+    "ptdewey/yankbank-nvim",
+    event = "VeryLazy",
+    config = function() require("yankbank").setup() end,
+    keys = {
+      { "<leader>y", "<cmd>YankBank<CR>", desc = "yankbank" },
+    },
   },
   -- {
   --   "elixir-tools/elixir-tools.nvim",

@@ -9,6 +9,8 @@ return {
       "lua",
       "vim",
       "diff",
+      "cpp",
+      "nix",
       -- add more arguments for adding more treesitter parsers
     })
   end,

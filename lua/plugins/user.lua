@@ -450,6 +450,25 @@ return {
       { "<leader>y", "<cmd>YankBank<CR>", desc = "yankbank" },
     },
   },
+  {
+    "TwIStOy/luasnip-snippets",
+    dependencies = { "L3MON4D3/LuaSnip" },
+    event = { "InsertEnter" },
+    config = function()
+      -- register all snippets into LuaSnip
+      require("luasnip-snippets").setup()
+    end,
+  },
+  {
+    "rebelot/heirline.nvim",
+    opts = function(_, opts)
+      local status = require "astroui.status"
+      opts.statusline[3] = status.component.file_info {
+        filename = { modify = ":." },
+        filetype = false,
+      }
+    end,
+  },
   -- {
   --   "elixir-tools/elixir-tools.nvim",
   --   ft = { "elixir" },

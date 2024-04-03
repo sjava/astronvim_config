@@ -163,6 +163,14 @@ return {
           function() vim.cmd.RustLsp "runnables" end,
           { silent = true, buffer = bufnr, desc = "select runnables" }
         )
+
+        require("ferris").create_commands(bufnr)
+        vim.keymap.set(
+          "n",
+          "<leader>lm",
+          "<cmd>FerrisViewMemoryLayout<cr>",
+          { buffer = true, desc = "View Memory Layout" }
+        )
         return
       end
       if client.name == "lua_ls" then

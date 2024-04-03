@@ -81,26 +81,6 @@ return {
   {
     "vxpm/ferris.nvim",
     ft= "rust",
-    init = function()
-      vim.api.nvim_create_autocmd("LspAttach", {
-        group = vim.api.nvim_create_augroup("ferris_commands", { clear = true }),
-        desc = "Add Ferris user commands to rust_analyzer buffers",
-        callback = function(args)
-          local lsp = require "ferris.private.ra_lsp"
-          local client = vim.lsp.get_client_by_id(args.data.client_id)
-
-          if lsp.client_is_ra(client) then
-            require("ferris").create_commands(args.buf)
-            vim.keymap.set(
-              "n",
-              "<leader>lm",
-              "<cmd>FerrisViewMemoryLayout<cr>",
-              { buffer = true, desc = "View Memory Layout" }
-            )
-          end
-        end,
-      })
-    end,
     opts = { create_commands = false },
   },
   {

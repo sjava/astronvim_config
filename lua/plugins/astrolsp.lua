@@ -167,7 +167,7 @@ return {
         require("ferris").create_commands(bufnr)
         vim.keymap.set(
           "n",
-          "<leader>lm",
+          "<Leader>lm",
           "<cmd>FerrisViewMemoryLayout<cr>",
           { buffer = true, desc = "View Memory Layout" }
         )

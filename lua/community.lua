@@ -49,6 +49,7 @@ return {
   { import = "astrocommunity.pack.json" },
   { import = "astrocommunity.pack.docker" },
   { import = "astrocommunity.pack.lua" },
+  { import = "astrocommunity.pack.elixir-phoenix" },
   { import = "astrocommunity.pack.python-ruff" },
   { import = "astrocommunity.pack.tailwindcss" },
   { import = "astrocommunity.pack.proto" },

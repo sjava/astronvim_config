@@ -151,17 +151,16 @@ return {
         },
       },
     },
-    keys = {
-      -- Run API request
-      {"<Leader>h", "<Nop>", desc = "Hurl action"},
-      { "<leader>hA", "<cmd>HurlRunner<CR>", desc = "Run All requests" },
-      { "<leader>ha", "<cmd>HurlRunnerAt<CR>", desc = "Run Api request" },
-      { "<leader>he", "<cmd>HurlRunnerToEntry<CR>", desc = "Run Api request to entry" },
-      { "<leader>ht", "<cmd>HurlToggleMode<CR>", desc = "Hurl Toggle Mode" },
-      { "<leader>hv", "<cmd>HurlVerbose<CR>", desc = "Run Api in verbose mode" },
-      -- Run Hurl request in visual mode
-      { "<leader>hh", ":HurlRunner<CR>", desc = "Hurl Runner", mode = "v" },
-    },
+    config = function()
+      require("hurl").setup {}
+      vim.keymap.del("n", "<Leader>h")
+      vim.keymap.set("n", "<Leader>h", "<Nop>", { buffer = 0, desc = "Hurl action" })
+      vim.keymap.set({ "n", "v" }, "<Leader>hA", "<cmd>HurlRunner<CR>", { buffer = 0, desc = "Run All requests" })
+      vim.keymap.set("n", "<Leader>ha", "<cmd>HurlRunnerAt<CR>", { buffer = 0, desc = "Run Api request" })
+      vim.keymap.set("n", "<Leader>he", "<cmd>HurlRunnerToEntry<CR>", { buffer = 0, desc = "Run Api request to entry" })
+      vim.keymap.set("n", "<Leader>ht", "<cmd>HurlToggleMode<CR>", { buffer = 0, desc = "Hurl Toggle Mode" })
+      vim.keymap.set("n", "<Leader>hv", "<cmd>HurlVerbose<CR>", { buffer = 0, desc = "Run Api in verbose mode" })
+    end,
   },
   {
     "otavioschwanck/arrow.nvim",

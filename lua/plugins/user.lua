@@ -153,7 +153,6 @@ return {
     },
     config = function()
       require("hurl").setup {}
-      vim.keymap.del("n", "<Leader>h")
       vim.keymap.set("n", "<Leader>h", "<Nop>", { buffer = 0, desc = "Hurl action" })
       vim.keymap.set({ "n", "v" }, "<Leader>hA", "<cmd>HurlRunner<CR>", { buffer = 0, desc = "Run All requests" })
       vim.keymap.set("n", "<Leader>ha", "<cmd>HurlRunnerAt<CR>", { buffer = 0, desc = "Run Api request" })

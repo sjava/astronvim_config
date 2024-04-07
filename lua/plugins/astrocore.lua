@@ -36,7 +36,7 @@ return {
         -- NOTE: `mapleader` and `maplocalleader` must be set in the AstroNvim opts or before `lazy.setup`
         -- This can be found in the `lua/lazy_setup.lua` file
         python3_host_prog = "python",
-        ["test#strategy"] = "kitty",
+        ["test#strategy"] = "wezterm",
         ["test#rust#cargotest#test_options"] = "-- --nocapture",
         ["test#rust#runner"] = "cargotest",
       },

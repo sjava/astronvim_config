@@ -36,7 +36,7 @@ return {
         -- NOTE: `mapleader` and `maplocalleader` must be set in the AstroNvim opts or before `lazy.setup`
         -- This can be found in the `lua/lazy_setup.lua` file
         python3_host_prog = "python",
-        ["test#strategy"] = "kitty",
+        ["test#strategy"] = "wezterm",
         ["test#rust#cargotest#test_options"] = "-- --nocapture",
         ["test#rust#runner"] = "cargotest",
       },
@@ -81,7 +81,7 @@ return {
         ["<Leader>jl"] = { "<cmd>TestLast<cr>", desc = "test last" },
         ["<Leader>jv"] = { "<cmd>TestVisit<cr>", desc = "test visit" },
 
-        ["<Leader>w"] = { desc = "Windows" },
+        ["<Leader>w"] = { "<Nop>", desc = "Windows" },
         ["<Leader>ws"] = { "<C-w>s", desc = "horizontal split window" },
         ["<Leader>wv"] = { "<C-w>v", desc = "vertical split window" },
         ["<Leader>wh"] = { "<C-w>h", desc = "left window" },
@@ -109,7 +109,6 @@ return {
         ["gpr"] = { "<cmd>lua require('goto-preview').goto_preview_references()<CR>", desc = "references" },
 
         ["<Leader>r"] = { desc = "RigGrep flow" },
-        ["<Leader>h"] = { desc = "Hurl" },
         ["<C-c>"] = { desc = "copilot chat" },
       },
       t = {

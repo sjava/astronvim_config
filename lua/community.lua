@@ -38,7 +38,7 @@ return {
     },
   },
   { import = "astrocommunity.pack.rust" },
-  { import = "astrocommunity.lsp.lsp-inlayhints-nvim" },
+  -- { import = "astrocommunity.lsp.lsp-inlayhints-nvim" },
 
   { import = "astrocommunity.completion.copilot-lua-cmp" },
   { import = "astrocommunity.completion.cmp-cmdline" },

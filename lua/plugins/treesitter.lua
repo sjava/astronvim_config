@@ -11,6 +11,7 @@ return {
       "diff",
       "cpp",
       "nix",
+      "hurl",
       -- add more arguments for adding more treesitter parsers
     })
   end,

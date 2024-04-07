@@ -153,6 +153,7 @@ return {
     },
     keys = {
       -- Run API request
+      {"<Leader>h", "<Nop>", desc = "Hurl action"},
       { "<leader>hA", "<cmd>HurlRunner<CR>", desc = "Run All requests" },
       { "<leader>ha", "<cmd>HurlRunnerAt<CR>", desc = "Run Api request" },
       { "<leader>he", "<cmd>HurlRunnerToEntry<CR>", desc = "Run Api request to entry" },

@@ -27,7 +27,7 @@ return {
           enabled = true,
           indentscope_color = "", -- catppuccin color (eg. `lavender`) Default: text
         },
-        noice = true,
+        noice = false,
         gitsigns = true,
         lsp_trouble = true,
         ts_rainbow2 = true,

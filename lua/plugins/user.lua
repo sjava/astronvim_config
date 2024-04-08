@@ -131,35 +131,37 @@ return {
     opts = {},
   },
   {
-    "jellydn/hurl.nvim",
+    "sjava/hurl.nvim",
     dependencies = { "MunifTanjim/nui.nvim" },
     ft = "hurl",
-    opts = {
-      -- Show debugging info
-      debug = false,
-      -- Show notification on run
-      show_notification = false,
-      -- Show response in popup or split
-      mode = "popup",
-      -- Default formatter
-      formatters = {
-        json = { "jq" }, -- Make sure you have install jq in your system, e.g: brew install jq
-        html = {
-          "prettier", -- Make sure you have install prettier in your system, e.g: npm install -g prettier
-          "--parser",
-          "html",
-        },
-      },
-    },
     config = function()
-      require("hurl").setup {}
+      require("hurl").setup {
+        -- Show debugging info
+        debug = false,
+        -- Show notification on run
+        show_notification = false,
+        -- Show response in popup or split
+        mode = "popup",
+        -- Default formatter
+        formatters = {
+          json = { "jq" }, -- Make sure you have install jq in your system, e.g: brew install jq
+          html = {
+            "prettier", -- Make sure you have install prettier in your system, e.g: npm install -g prettier
+            "--parser",
+            "html",
+          },
+        },
+        env_file = {
+          "hurl.env",
+        },
+      }
       vim.keymap.del("n", "<Leader>h")
       local wk = require "which-key"
       wk.register({
         h = {
-          name = "Hurl action", -- optional group name
-          a = { "<cmd>HurlRunnerAt<cr>", "Run Api request" }, -- create a binding with label
-          A = { "<cmd>HurlRunner<cr>", "Run All request", mode = { "n", "v" } },
+          name = "Hurl Action", -- optional group name
+          a = { "<cmd>HurlRunnerAt<cr>", "Run Request At" }, -- create a binding with label
+          A = { "<cmd>HurlRunner<cr>", "Run All Request", mode = { "n", "v" } },
           e = { "<cmd>HurlRunnerToEntry<cr>", "Run Api request to entry" },
           t = { "<cmd>HurlToggleMode<cr>", "Hurl Toggle Mode" },
           v = { "<cmd>HurlVerbose<cr>", "Run Api in verbose mode" },

@@ -81,7 +81,7 @@ return {
         ["<Leader>jl"] = { "<cmd>TestLast<cr>", desc = "test last" },
         ["<Leader>jv"] = { "<cmd>TestVisit<cr>", desc = "test visit" },
 
-        ["<Leader>w"] = { "<Nop>", desc = "Windows" },
+        ["<Leader>w"] = { "Windows" },
         ["<Leader>ws"] = { "<C-w>s", desc = "horizontal split window" },
         ["<Leader>wv"] = { "<C-w>v", desc = "vertical split window" },
         ["<Leader>wh"] = { "<C-w>h", desc = "left window" },

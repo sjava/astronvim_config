@@ -170,12 +170,6 @@ return {
           -- b = { function() print "bar" end, "Foobar" }, -- you can also pass functions!
         },
       }, { prefix = "<Leader>", buffer = 0 })
-      -- vim.keymap.set("n", "<Leader>h", "<Nop>", { buffer = 0, desc = "Hurl action", nowait = true })
-      -- vim.keymap.set({ "n", "v" }, "<Leader>hA", "<cmd>HurlRunner<CR>", { buffer = 0, desc = "Run All requests" })
-      -- vim.keymap.set("n", "<Leader>ha", "<cmd>HurlRunnerAt<CR>", { buffer = 0, desc = "Run Api request" })
-      -- vim.keymap.set("n", "<Leader>he", "<cmd>HurlRunnerToEntry<CR>", { buffer = 0, desc = "Run Api request to entry" })
-      -- vim.keymap.set("n", "<Leader>ht", "<cmd>HurlToggleMode<CR>", { buffer = 0, desc = "Hurl Toggle Mode" })
-      -- vim.keymap.set("n", "<Leader>hv", "<cmd>HurlVerbose<CR>", { buffer = 0, desc = "Run Api in verbose mode" })
     end,
   },
   {

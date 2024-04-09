@@ -139,32 +139,7 @@ return {
   { import = "astrocommunity.editing-support.telescope-undo-nvim" },
   { import = "astrocommunity.editing-support.wildfire-nvim" },
 
-  { import = "astrocommunity.code-runner.compiler-nvim" },
   { import = "astrocommunity.code-runner.overseer-nvim" },
 
   { import = "astrocommunity.test.neotest" },
-  {
-    "nvim-neotest/neotest",
-    dependencies = {
-      "mrcjkb/rustaceanvim",
-      "nvim-neotest/nvim-nio",
-      "nvim-lua/plenary.nvim",
-      "antoinemadec/FixCursorHold.nvim",
-      "nvim-treesitter/nvim-treesitter",
-    },
-    opts = function(_, opts)
-      local index = 0
-      for i, v in ipairs(opts["adapters"]) do
-        if v.name == "neotest-rust" then
-          index = i
-          break
-        end
-      end
-      if index > 0 then table.remove(opts["adapters"], index) end
-      table.insert(opts["adapters"], require "rustaceanvim.neotest")
-      return opts
-    end,
-  },
-
-  { import = "astrocommunity.lsp.garbage-day-nvim" },
 }

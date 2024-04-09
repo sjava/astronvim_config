@@ -11,9 +11,11 @@ return {
       opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
         "lua_ls",
         "basedpyright",
+        "rust_analyzer",
         -- add more arguments for adding more language servers
       })
       opts.handlers.pyright = function() end
+      opts.handlers.rust_analyzer= function() end
     end,
   },
   -- use mason-null-ls to configure Formatters/Linter installation for null-ls sources

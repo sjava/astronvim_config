@@ -160,11 +160,11 @@ return {
       wk.register({
         h = {
           name = "Hurl Action", -- optional group name
-          a = { "<cmd>HurlRunnerAt<cr>", "Run Request At" }, -- create a binding with label
-          A = { "<cmd>HurlRunner<cr>", "Run All Request", mode = { "n", "v" } },
-          e = { "<cmd>HurlRunnerToEntry<cr>", "Run Api request to entry" },
-          t = { "<cmd>HurlToggleMode<cr>", "Hurl Toggle Mode" },
-          v = { "<cmd>HurlVerbose<cr>", "Run Api in verbose mode" },
+          -- a = { "<cmd>HurlRunnerAt<cr>", "Run Request At" }, -- create a binding with label
+          -- A = { "<cmd>HurlRunner<cr>", "Run All Request", mode = { "n", "v" } },
+          -- e = { "<cmd>HurlRunnerToEntry<cr>", "Run Api request to entry" },
+          -- t = { "<cmd>HurlToggleMode<cr>", "Hurl Toggle Mode" },
+          -- v = { "<cmd>HurlVerbose<cr>", "Run Api in verbose mode" },
           -- r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File", noremap = false, buffer = 123 }, -- additional options for creating the keymap
           -- n = { "New File" }, -- just a label. don't create any mapping
           -- e = "Edit File", -- same as above
@@ -172,6 +172,36 @@ return {
           -- b = { function() print "bar" end, "Foobar" }, -- you can also pass functions!
         },
       }, { prefix = "<Leader>", buffer = 0 })
+      vim.keymap.set(
+        "n",
+        "<Leader>ha",
+        "<cmd>HurlRunnerAt<cr>",
+        { noremap = true, silent = true, desc = "Run Request At", buffer = 0 }
+      )
+      vim.keymap.set(
+        { "n", "v" },
+        "<Leader>hA",
+        "<cmd>HurlRunner<cr>",
+        { noremap = true, silent = true, desc = "Run All Request", buffer = 0 }
+      )
+      vim.keymap.set(
+        "n",
+        "<Leader>he",
+        "<cmd>HurlRunnerToEntry<cr>",
+        { noremap = true, silent = true, desc = "Run Api request to entry", buffer = 0 }
+      )
+      vim.keymap.set(
+        "n",
+        "<Leader>ht",
+        "<cmd>HurlToggleMode<cr>",
+        { noremap = true, silent = true, desc = "Hurl Toggle Mode", buffer = 0 }
+      )
+      vim.keymap.set(
+        "n",
+        "<Leader>hv",
+        "<cmd>HurlVerbose<cr>",
+        { noremap = true, silent = true, desc = "Run Api in verbose mode", buffer = 0 }
+      )
     end,
   },
   {

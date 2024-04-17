@@ -497,6 +497,19 @@ return {
         filename = { modify = ":." },
         filetype = false,
       }
+
+      opts.statusline[#opts.statusline] = status.component.builder {
+        {
+          provider = function()
+            local arrow_statusline = require "arrow.statusline"
+            local arrow = arrow_statusline.text_for_statusline_with_icons()
+            return status.utils.stylize(arrow, {
+              padding = { left = 1 }, -- pad the right side
+            })
+          end,
+        },
+        hl = { fg = "#A6E3A1" },
+      }
     end,
   },
   -- {

@@ -498,7 +498,7 @@ return {
         filetype = false,
       }
 
-      opts.statusline[#opts.statusline] = status.component.builder {
+      local component = status.component.builder {
         {
           provider = function()
             local arrow_statusline = require "arrow.statusline"
@@ -510,6 +510,7 @@ return {
         },
         hl = { fg = "#A6E3A1" },
       }
+      table.insert(opts.statusline, 4, component)
     end,
   },
   -- {

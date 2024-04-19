@@ -80,6 +80,11 @@ if vim.g.neovide then
   vim.g.neovide_fullscreen = true
   vim.g.neovide_refresh_rate = 60
 
+  vim.g.neovide_padding_top = 0
+  vim.g.neovide_padding_bottom = 0
+  vim.g.neovide_padding_right = 0
+  vim.g.neovide_padding_left = 0
+
   vim.keymap.set("c", "<C-v>", "<C-R>+") -- Paste command mode
 
   -- Allow clipboard copy paste in neovim

@@ -57,6 +57,15 @@ return {
           },
         },
       },
+      ["rust-analyzer"] = {
+        capabilities = {
+          workspace = {
+            didChangeConfiguration = {
+              dynamicRegistration = true,
+            },
+          },
+        },
+      },
     },
     -- customize how language servers are attached
     handlers = {

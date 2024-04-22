@@ -513,6 +513,12 @@ return {
       table.insert(opts.statusline, 4, component)
     end,
   },
+  {
+    "AstroNvim/astrolsp",
+    event = "User AstroFile",
+    branch = "main",
+    commit = "2b90b49",
+  },
   -- {
   --   "elixir-tools/elixir-tools.nvim",
   --   ft = { "elixir" },

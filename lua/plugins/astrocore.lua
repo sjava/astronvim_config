@@ -58,6 +58,12 @@ return {
         --   desc = "Previous buffer",
         -- },
 
+        ["<Leader>ue"] = {
+          function()
+            require("copilot.suggestion").toggle_auto_trigger()
+          end,
+          desc = "toggle copilot suggestion",
+        },
         -- mappings seen under group name "Buffer"
         ["<Leader>bD"] = {
           function()

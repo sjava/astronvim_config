@@ -163,6 +163,6 @@ return {
   { import = "astrocommunity.editing-support.wildfire-nvim" },
 
   { import = "astrocommunity.code-runner.overseer-nvim" },
-
   { import = "astrocommunity.test.neotest" },
+  -- { import = "astrocommunity.completion.fittencode-nvim" },
 }

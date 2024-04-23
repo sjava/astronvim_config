@@ -519,6 +519,21 @@ return {
     branch = "main",
     commit = "2b90b49",
   },
+  {
+    "andrewferrier/debugprint.nvim",
+    event = "User AstroFile",
+    dependencies = {
+      "echasnovski/mini.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    config = function() require("debugprint").setup() end,
+    version = "*",
+  },
+  {
+    "jakewvincent/mkdnflow.nvim",
+    ft= "markdown",
+    config = function() require("mkdnflow").setup {} end,
+  },
   -- {
   --   "elixir-tools/elixir-tools.nvim",
   --   ft = { "elixir" },

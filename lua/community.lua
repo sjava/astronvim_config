@@ -27,7 +27,7 @@ return {
           enabled = true,
           indentscope_color = "", -- catppuccin color (eg. `lavender`) Default: text
         },
-        noice = true,
+        noice = false,
         gitsigns = true,
         lsp_trouble = true,
         ts_rainbow2 = true,
@@ -94,7 +94,7 @@ return {
   { import = "astrocommunity.pack.python-ruff" },
   { import = "astrocommunity.pack.tailwindcss" },
   { import = "astrocommunity.pack.proto" },
-  { import = "astrocommunity.pack.markdown" },
+  -- { import = "astrocommunity.pack.markdown" },
   { import = "astrocommunity.diagnostics.trouble-nvim" },
   { import = "astrocommunity.utility.noice-nvim" },
   {
@@ -164,5 +164,4 @@ return {
 
   { import = "astrocommunity.code-runner.overseer-nvim" },
   { import = "astrocommunity.test.neotest" },
-  -- { import = "astrocommunity.completion.fittencode-nvim" },
 }

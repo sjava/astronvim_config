@@ -515,9 +515,7 @@ return {
   },
   {
     "AstroNvim/astrolsp",
-    event = "User AstroFile",
-    branch = "main",
-    commit = "2b90b49",
+    version = false,
   },
   {
     "andrewferrier/debugprint.nvim",
@@ -531,8 +529,12 @@ return {
   },
   {
     "jakewvincent/mkdnflow.nvim",
-    ft= "markdown",
+    ft = "markdown",
     config = function() require("mkdnflow").setup {} end,
+  },
+  {
+    "pechorin/any-jump.vim",
+    event = "User AstroFile",
   },
   -- {
   --   "elixir-tools/elixir-tools.nvim",

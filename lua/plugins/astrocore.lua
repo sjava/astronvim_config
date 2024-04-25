@@ -59,9 +59,7 @@ return {
         -- },
 
         ["<Leader>ue"] = {
-          function()
-            require("copilot.suggestion").toggle_auto_trigger()
-          end,
+          function() require("copilot.suggestion").toggle_auto_trigger() end,
           desc = "toggle copilot suggestion",
         },
         -- mappings seen under group name "Buffer"
@@ -86,6 +84,9 @@ return {
         ["<Leader>ja"] = { "<cmd>TestSuite<cr>", desc = "test all" },
         ["<Leader>jl"] = { "<cmd>TestLast<cr>", desc = "test last" },
         ["<Leader>jv"] = { "<cmd>TestVisit<cr>", desc = "test visit" },
+        ["<Leader>jj"] = { "<cmd>AnyJump<cr>", desc = "Jump to definition under cursor" },
+        ["<Leader>jb"] = { "<cmd>AnyJumpBack<cr>", desc = "open previous opened file (after jump)" },
+        ["<Leader>jr"] = { "<cmd>AnyJumpLastResults<cr>", desc = "open last closed anyjump window" },
 
         ["<Leader>w"] = { name = "Windows" },
         ["<Leader>ws"] = { "<C-w>s", desc = "horizontal split window" },
@@ -116,6 +117,9 @@ return {
 
         ["<Leader>r"] = { desc = "RigGrep flow" },
         ["<C-c>"] = { desc = "copilot chat" },
+      },
+      v = {
+        ["<Leader>jj"] = { "<cmd>AnyJumpVisual<cr>", desc = "jump to selected text" },
       },
       t = {
         -- setting a mapping to false will disable it

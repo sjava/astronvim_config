@@ -79,7 +79,20 @@ return {
     end,
     config = function(_, opts) vim.g.rustaceanvim = require("astrocore").extend_tbl(opts, vim.g.rustaceanvim) end,
   },
-  -- { import = "astrocommunity.lsp.lsp-inlayhints-nvim" },
+  { import = "astrocommunity.lsp.lsp-inlayhints-nvim" },
+  {
+    "lvimuser/lsp-inlayhints.nvim",
+    enabled = function()
+      local major = vim.version().major
+      local minor = vim.version().minor
+
+      if major > 0 or (major == 0 and minor >= 10) then
+        return false
+      else
+        return true
+      end
+    end,
+  },
 
   { import = "astrocommunity.completion.copilot-lua-cmp" },
   { import = "astrocommunity.completion.cmp-cmdline" },

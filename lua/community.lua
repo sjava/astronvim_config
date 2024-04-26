@@ -83,10 +83,7 @@ return {
   {
     "lvimuser/lsp-inlayhints.nvim",
     enabled = function()
-      local major = vim.version().major
-      local minor = vim.version().minor
-
-      if major > 0 or (major == 0 and minor >= 10) then
+      if vim.fn.has "nvim-0.10" == 1 then
         return false
       else
         return true

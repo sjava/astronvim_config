@@ -536,6 +536,14 @@ return {
     "pechorin/any-jump.vim",
     event = "User AstroFile",
   },
+  {
+    "Mr-LLLLL/cool-chunk.nvim",
+    event = { "CursorHold", "CursorHoldI" },
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+    },
+    config = function() require("cool-chunk").setup {} end,
+  },
   -- {
   --   "elixir-tools/elixir-tools.nvim",
   --   ft = { "elixir" },

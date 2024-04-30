@@ -13,6 +13,7 @@ return {
     name = "catppuccin",
     opts = {
       dim_inactive = { enabled = true },
+      term_colors = true,
       integrations = {
         aerial = true,
         cmp = true,
@@ -27,13 +28,31 @@ return {
           enabled = true,
           indentscope_color = "", -- catppuccin color (eg. `lavender`) Default: text
         },
-        noice = false,
+        noice = true,
         gitsigns = true,
         lsp_trouble = true,
         ts_rainbow2 = true,
         treesitter = true,
         window_picker = true,
         overseer = true,
+        native_lsp = {
+          enabled = true,
+          virtual_text = {
+            errors = { "italic" },
+            hints = { "italic" },
+            warnings = { "italic" },
+            information = { "italic" },
+          },
+          underlines = {
+            errors = { "underline" },
+            hints = { "underline" },
+            warnings = { "underline" },
+            information = { "underline" },
+          },
+          inlay_hints = {
+            background = true,
+          },
+        },
       },
     },
   },
@@ -138,7 +157,7 @@ return {
           command_palette = true, -- position the cmdline and popupmenu together
           long_message_to_split = true, -- long messages will be sent to a split
           inc_rename = utils.is_available "inc-rename.nvim", -- enables an input dialog for inc-rename.nvim
-          lsp_doc_border = false, -- add a border to hover docs and signature help
+          lsp_doc_border = true, -- add a border to hover docs and signature help
         },
       })
     end,

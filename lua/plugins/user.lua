@@ -514,10 +514,6 @@ return {
     end,
   },
   {
-    "AstroNvim/astrolsp",
-    version = false,
-  },
-  {
     "andrewferrier/debugprint.nvim",
     event = "User AstroFile",
     dependencies = {

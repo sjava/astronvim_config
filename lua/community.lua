@@ -193,4 +193,5 @@ return {
 
   { import = "astrocommunity.code-runner.overseer-nvim" },
   { import = "astrocommunity.test.neotest" },
+  { import = "astrocommunity.recipes.astrolsp-no-insert-inlay-hints" },
 }

@@ -12,6 +12,9 @@ return {
       "cpp",
       "nix",
       "hurl",
+      "dockerfile",
+      "gitcommit",
+      "gitignore",
       -- add more arguments for adding more treesitter parsers
     })
   end,

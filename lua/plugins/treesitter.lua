@@ -9,5 +9,6 @@ return {
       opts.ensure_installed,
       { "lua", "vim", "diff", "cpp", "nix", "hurl", "dockerfile", "gitcommit", "gitignore" }
     )
+    opts.auto_install = true
   end,
 }

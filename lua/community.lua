@@ -195,4 +195,5 @@ return {
   { import = "astrocommunity.test.neotest" },
   { import = "astrocommunity.recipes.astrolsp-no-insert-inlay-hints" },
   { import = "astrocommunity.recipes.vscode-icons"},
+  { import = "astrocommunity.color.nvim-highlight-colors"},
 }

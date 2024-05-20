@@ -194,6 +194,11 @@ return {
   { import = "astrocommunity.code-runner.overseer-nvim" },
   { import = "astrocommunity.test.neotest" },
   { import = "astrocommunity.recipes.astrolsp-no-insert-inlay-hints" },
-  { import = "astrocommunity.recipes.vscode-icons"},
-  { import = "astrocommunity.color.nvim-highlight-colors"},
+  { import = "astrocommunity.recipes.vscode-icons" },
+
+  { import = "astrocommunity.color.nvim-highlight-colors" },
+  {
+    "brenoprata10/nvim-highlight-colors",
+    opts = { enable_tailwind = true },
+  },
 }

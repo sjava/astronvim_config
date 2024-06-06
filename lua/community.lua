@@ -150,7 +150,7 @@ return {
   { import = "astrocommunity.editing-support.telescope-undo-nvim" },
   { import = "astrocommunity.editing-support.wildfire-nvim" },
 
-  { import = "astrocommunity.code-runner.overseer-nvim" },
+  { import = "astrocommunity.code-runner.sniprun" },
   { import = "astrocommunity.test.neotest" },
   { import = "astrocommunity.recipes.astrolsp-no-insert-inlay-hints" },
   { import = "astrocommunity.recipes.vscode-icons" },

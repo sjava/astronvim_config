@@ -161,4 +161,6 @@ return {
     "brenoprata10/nvim-highlight-colors",
     opts = { enable_tailwind = true },
   },
+
+  { import = "astrocommunity.neovim-lua-development.lazydev-nvim" },
 }

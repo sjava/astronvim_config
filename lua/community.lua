@@ -57,19 +57,7 @@ return {
     },
   },
   { import = "astrocommunity.pack.rust" },
-  { import = "astrocommunity.lsp.lsp-inlayhints-nvim" },
-  {
-    "lvimuser/lsp-inlayhints.nvim",
-    enabled = function()
-      if vim.fn.has "nvim-0.10" == 1 then
-        return false
-      else
-        return true
-      end
-    end,
-  },
 
-  { import = "astrocommunity.completion.copilot-lua-cmp" },
   { import = "astrocommunity.completion.cmp-cmdline" },
   { import = "astrocommunity.pack.zig" },
   { import = "astrocommunity.pack.toml" },
@@ -163,4 +151,5 @@ return {
   },
 
   { import = "astrocommunity.neovim-lua-development.lazydev-nvim" },
+  { import = "astrocommunity.completion.copilot-lua-cmp" },
 }

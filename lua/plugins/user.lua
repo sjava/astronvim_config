@@ -473,14 +473,6 @@ return {
     config = true,
   },
   {
-    "ptdewey/yankbank-nvim",
-    event = "VeryLazy",
-    config = function() require("yankbank").setup() end,
-    keys = {
-      { "<leader>y", "<cmd>YankBank<CR>", desc = "yankbank" },
-    },
-  },
-  {
     "TwIStOy/luasnip-snippets",
     dependencies = { "L3MON4D3/LuaSnip" },
     event = { "InsertEnter" },

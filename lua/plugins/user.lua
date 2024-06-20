@@ -563,7 +563,32 @@ return {
         },
       })
     end,
-  }, -- {
+  },
+  {
+    "joshuadanpeterson/typewriter",
+    config = function()
+      require("typewriter").setup {
+        enable_with_zen_mode = true,
+        enable_with_true_zen = true,
+      }
+    end,
+    opts = {},
+  },
+  {
+    "folke/zen-mode.nvim",
+    opts = {
+      on_open = function() vim.cmd "TWEnable" end,
+      on_close = function() vim.cmd "TWDisable" end,
+    },
+  },
+  {
+    "ysmb-wtsg/in-and-out.nvim",
+    config = function()
+      vim.keymap.set("i", "<C-CR>", function() require("in-and-out").in_and_out() end)
+      vim.keymap.set("n", "<C-CR>", function() require("in-and-out").in_and_out() end)
+    end,
+  },
+  -- {
   --   "elixir-tools/elixir-tools.nvim",
   --   ft = { "elixir" },
   --   init = function()

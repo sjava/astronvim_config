@@ -88,7 +88,7 @@ return {
         ["<Leader>jb"] = { "<cmd>AnyJumpBack<cr>", desc = "open previous opened file (after jump)" },
         ["<Leader>jr"] = { "<cmd>AnyJumpLastResults<cr>", desc = "open last closed anyjump window" },
 
-        ["<Leader>w"] = { name = "Windows" },
+        ["<Leader>w"] = { desc = "Windows" },
         ["<Leader>ws"] = { "<C-w>s", desc = "horizontal split window" },
         ["<Leader>wv"] = { "<C-w>v", desc = "vertical split window" },
         ["<Leader>wh"] = { "<C-w>h", desc = "left window" },

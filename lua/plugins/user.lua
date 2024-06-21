@@ -588,6 +588,13 @@ return {
       vim.keymap.set("n", "<C-CR>", function() require("in-and-out").in_and_out() end)
     end,
   },
+  {
+    "AstroNvim/astrocore",
+    opts = function(_, opts)
+      local maps = opts.mappings
+      maps.n["<Leader>w"] = { desc = "windows" }
+    end,
+  },
   -- {
   --   "elixir-tools/elixir-tools.nvim",
   --   ft = { "elixir" },

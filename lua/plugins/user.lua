@@ -200,12 +200,6 @@ return {
         show_icons = true,
         leader_key = "<leader>a", -- Recommended to be a single key
       }
-      vim.keymap.set(
-        "n",
-        "<leader>a",
-        function() require("arrow.ui").openMenu() end,
-        { noremap = true, silent = true, desc = "Open Arrow Menu" }
-      )
     end,
   },
   {

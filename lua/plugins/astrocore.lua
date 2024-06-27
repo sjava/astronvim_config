@@ -39,6 +39,7 @@ return {
         ["test#strategy"] = "wezterm",
         ["test#rust#cargotest#test_options"] = "-- --nocapture",
         ["test#rust#runner"] = "cargotest",
+        any_jump_disable_default_keybindings = 1,
       },
     },
     -- Mappings can be configured through AstroCore as well.
@@ -84,6 +85,7 @@ return {
         ["<Leader>ja"] = { "<cmd>TestSuite<cr>", desc = "test all" },
         ["<Leader>jl"] = { "<cmd>TestLast<cr>", desc = "test last" },
         ["<Leader>jv"] = { "<cmd>TestVisit<cr>", desc = "test visit" },
+
         ["<Leader>jj"] = { "<cmd>AnyJump<cr>", desc = "Jump to definition under cursor" },
         ["<Leader>jb"] = { "<cmd>AnyJumpBack<cr>", desc = "open previous opened file (after jump)" },
         ["<Leader>jr"] = { "<cmd>AnyJumpLastResults<cr>", desc = "open last closed anyjump window" },

@@ -55,6 +55,9 @@ return {
               useLibraryCodeForTypes = true,
             },
           },
+          python = {
+            pythonPath = vim.fn.exepath "python",
+          },
         },
       },
       ["rust-analyzer"] = {

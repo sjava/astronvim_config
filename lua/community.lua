@@ -65,7 +65,7 @@ return {
   { import = "astrocommunity.pack.yaml" },
   { import = "astrocommunity.pack.json" },
   { import = "astrocommunity.pack.docker" },
-  { import = "astrocommunity.pack.lua" },
+  { import = "astrocommunity.pack.vue" },
   { import = "astrocommunity.pack.elixir-phoenix" },
   { import = "astrocommunity.pack.python-ruff" },
   { import = "astrocommunity.pack.tailwindcss" },
@@ -142,6 +142,8 @@ return {
   { import = "astrocommunity.test.neotest" },
   { import = "astrocommunity.recipes.astrolsp-no-insert-inlay-hints" },
   { import = "astrocommunity.recipes.vscode-icons" },
+
+  { import = "astrocommunity.icon.mini-icons" },
 
   { import = "astrocommunity.color.nvim-highlight-colors" },
   {

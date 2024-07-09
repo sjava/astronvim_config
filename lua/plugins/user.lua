@@ -131,7 +131,8 @@ return {
     opts = {},
   },
   {
-    "sjava/hurl.nvim",
+    -- "sjava/hurl.nvim",
+    "jellydn/hurl.nvim",
     dependencies = { "MunifTanjim/nui.nvim" },
     ft = "hurl",
     config = function()
@@ -200,6 +201,12 @@ return {
         show_icons = true,
         leader_key = "<leader>a", -- Recommended to be a single key
       }
+      vim.keymap.set(
+        "n",
+        "<Leader>a",
+        require("arrow.ui").openMenu,
+        { noremap = true, silent = true, nowait = true,desc="Open Arrow" }
+      )
     end,
   },
   {

@@ -116,7 +116,6 @@ return {
         ["gpi"] = { "<cmd>lua require('goto-preview').goto_preview_implementation()<CR>", desc = "implementation" },
         ["gpr"] = { "<cmd>lua require('goto-preview').goto_preview_references()<CR>", desc = "references" },
 
-        ["<Leader>r"] = { desc = "RigGrep flow" },
         ["<C-c>"] = { desc = "copilot chat" },
       },
       v = {

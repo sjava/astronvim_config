@@ -89,31 +89,6 @@ return {
     opts = {},
   },
   {
-    "mangelozzi/rgflow.nvim",
-    event = "BufEnter",
-    config = function()
-      require("rgflow").setup {
-        -- Set the default rip grep flags and options for when running a search via
-        -- RgFlow. Once changed via the UI, the previous search flags are used for
-        -- each subsequent search (until Neovim restarts).
-        cmd_flags = "--smart-case --fixed-strings --ignore --max-columns 200",
-
-        -- Mappings to trigger RgFlow functions
-        default_trigger_mappings = true,
-        -- These mappings are only active when the RgFlow UI (panel) is open
-        default_ui_mappings = true,
-        -- QuickFix window only mapping
-        default_quickfix_mappings = true,
-        colors = {
-          RgFlowInputPath = { link = "NormalFloat" },
-          RgFlowInputBg = { link = "NormalFloat" },
-          RgFlowInputFlags = { link = "NormalFloat" },
-          RgFlowInputPattern = { link = "NormalFloat" },
-        },
-      }
-    end,
-  },
-  {
     "gregorias/coerce.nvim",
     event = "User AstroFile",
     config = function()
@@ -205,7 +180,7 @@ return {
         "n",
         "<Leader>a",
         require("arrow.ui").openMenu,
-        { noremap = true, silent = true, nowait = true,desc="Open Arrow" }
+        { noremap = true, silent = true, nowait = true, desc = "Open Arrow" }
       )
     end,
   },
@@ -609,6 +584,18 @@ return {
       },
     },
     config = function() require("grug-far").setup {} end,
+  },
+  {
+    "chrisgrieser/nvim-rip-substitute",
+    cmd = "RipSubstitute",
+    keys = {
+      {
+        "<leader>fs",
+        function() require("rip-substitute").sub() end,
+        mode = { "n", "x" },
+        desc = " rip substitute",
+      },
+    },
   },
   {
     "akinsho/toggleterm.nvim",

@@ -89,18 +89,6 @@ return {
     opts = {},
   },
   {
-    "gregorias/coerce.nvim",
-    event = "User AstroFile",
-    config = function()
-      require("coerce").setup {}
-      require("coerce").register_case {
-        keymap = "l",
-        case = function(str) return vim.fn.tolower(str) end,
-        description = "lowercase",
-      }
-    end,
-  },
-  {
     "0xAdk/full_visual_line.nvim",
     keys = "V",
     opts = {},
@@ -133,9 +121,10 @@ return {
       }
       vim.keymap.del("n", "<Leader>h")
       local wk = require "which-key"
-      wk.register({
-        h = { name = "Hurl Action" },
-      }, { prefix = "<Leader>", buffer = 0 })
+      wk.add {
+        { "<Leader>h", name = "Hurl Action", buffer = 0 },
+      }
+
       vim.keymap.set(
         "n",
         "<Leader>ha",
@@ -325,16 +314,21 @@ return {
 
       -- Add which-key mappings
       local wk = require "which-key"
-      wk.register {
-        g = {
-          m = {
-            name = "+Copilot Chat",
-            d = "Show diff",
-            p = "System prompt",
-            s = "Show selection",
-            y = "Yank diff",
-          },
-        },
+      wk.add {
+        { "gm", group = "Copilot Chat" },
+        { "gmd", desc = "Show diff" },
+        { "gmp", desc = "System prompt" },
+        { "gms", desc = "Show selection" },
+        { "gmy", desc = "Yank diff" },
+        -- g = {
+        --   m = {
+        --     name = "+Copilot Chat",
+        --     d = "Show diff",
+        --     p = "System prompt",
+        --     s = "Show selection",
+        --     y = "Yank diff",
+        --   },
+        -- },
       }
     end,
     keys = {

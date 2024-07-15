@@ -137,6 +137,7 @@ return {
   { import = "astrocommunity.editing-support.treesj" },
   { import = "astrocommunity.editing-support.telescope-undo-nvim" },
   { import = "astrocommunity.editing-support.wildfire-nvim" },
+  { import = "astrocommunity.editing-support.text-case-nvim" },
 
   { import = "astrocommunity.code-runner.sniprun" },
   { import = "astrocommunity.test.neotest" },

@@ -567,17 +567,53 @@ return {
   },
   {
     "MagicDuck/grug-far.nvim",
-    dependencies = {
+    cmd = "GrugFar",
+    specs = {
+      {
+        "AstroNvim/astroui",
+        ---@type AstroUIOpts
+        opts = {
+          icons = {
+            GrugFar = "󰛔",
+          },
+        },
+      },
       {
         "AstroNvim/astrocore",
+        ---@param opts AstroCoreOpts
         opts = function(_, opts)
-          local maps = opts.mappings
+          local maps = opts.mappings and opts.mappings or require("astrocore").empty_map_table()
           maps.n["<Leader>s"] = { desc = "Search" }
-          maps.n["<Leader>sg"] = { "<Cmd>GrugFar<CR>", desc = "Run grup-far" }
+          maps.n["<Leader>sg"] = {
+            function() require("grug-far").grug_far {} end,
+            desc = "Run grup-far",
+          }
+          maps.x["<Leader>sg"] = {
+            function() require("grug-far").with_visual_selection {} end,
+            desc = "Run grup-far",
+          }
         end,
       },
+      {
+        "zbirenbaum/copilot.lua",
+        optional = true,
+        opts = {
+          filetypes = {
+            ["grug-far"] = false,
+            ["grug-far-history"] = false,
+          },
+        },
+      },
     },
-    config = function() require("grug-far").setup {} end,
+    ---@param opts GrugFarOptionsOverride
+    -- NOTE: Wrapping opts into a function, because `astrocore` can set vim options
+    opts = function(_, opts)
+      return require("astrocore").extend_tbl(opts, {
+        icons = {
+          enabled = vim.g.icons_enabled,
+        },
+      } --[[@as GrugFarOptionsOverride]])
+    end,
   },
   {
     "chrisgrieser/nvim-rip-substitute",

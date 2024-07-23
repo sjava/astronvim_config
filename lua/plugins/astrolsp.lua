@@ -150,12 +150,6 @@ return {
         )
         vim.keymap.set(
           "n",
-          "<Leader>lH",
-          function() require("lsp-inlayhints").show() end,
-          { silent = true, buffer = bufnr, desc = "Show lsp inlay" }
-        )
-        vim.keymap.set(
-          "n",
           "<Leader>lo",
           function() vim.cmd.RustLsp "externalDocs" end,
           { buffer = true, desc = "Open Documentation" }

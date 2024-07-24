@@ -35,6 +35,7 @@ return {
         treesitter = true,
         window_picker = true,
         overseer = true,
+        grug_far = false,
         native_lsp = {
           enabled = true,
           virtual_text = {

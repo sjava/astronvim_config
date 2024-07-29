@@ -18,7 +18,7 @@ vim.filetype.add {
   extension = {
     wxml = "html",
     mpx = "vue",
-    hurl = "hurl",
+    http = "http",
   },
 }
 

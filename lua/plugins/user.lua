@@ -75,67 +75,23 @@ return {
     opts = {},
   },
   {
-    -- "sjava/hurl.nvim",
-    "jellydn/hurl.nvim",
-    dependencies = { "MunifTanjim/nui.nvim" },
-    ft = "hurl",
+    "mistweaverco/kulala.nvim",
+    ft = "http",
     config = function()
-      require("hurl").setup {
-        -- Show debugging info
-        debug = false,
-        -- Show notification on run
-        show_notification = false,
-        -- Show response in popup or split
-        mode = "popup",
-        -- Default formatter
-        formatters = {
-          json = { "jq" }, -- Make sure you have install jq in your system, e.g: brew install jq
-          html = {
-            "prettier", -- Make sure you have install prettier in your system, e.g: npm install -g prettier
-            "--parser",
-            "html",
-          },
-        },
-        env_file = {
-          "hurl.env",
-        },
-      }
-      vim.keymap.del("n", "<Leader>h")
-      local wk = require "which-key"
-      wk.add {
-        { "<Leader>h", name = "Hurl Action", buffer = 0 },
-      }
-
+      require("kulala").setup()
       vim.keymap.set(
         "n",
-        "<Leader>ha",
-        "<cmd>HurlRunnerAt<cr>",
-        { noremap = true, silent = true, desc = "Run Request At", buffer = 0 }
-      )
-      vim.keymap.set(
-        { "n", "v" },
-        "<Leader>hA",
-        "<cmd>HurlRunner<cr>",
-        { noremap = true, silent = true, desc = "Run All Request", buffer = 0 }
+        "<C-k>",
+        ":lua require('kulala').jump_prev()<CR>",
+        { noremap = true, silent = true, buffer = 0 }
       )
       vim.keymap.set(
         "n",
-        "<Leader>he",
-        "<cmd>HurlRunnerToEntry<cr>",
-        { noremap = true, silent = true, desc = "Run Api request to entry", buffer = 0 }
+        "<C-j>",
+        ":lua require('kulala').jump_next()<CR>",
+        { noremap = true, silent = true, buffer = 0 }
       )
-      vim.keymap.set(
-        "n",
-        "<Leader>ht",
-        "<cmd>HurlToggleMode<cr>",
-        { noremap = true, silent = true, desc = "Hurl Toggle Mode", buffer = 0 }
-      )
-      vim.keymap.set(
-        "n",
-        "<Leader>hv",
-        "<cmd>HurlVerbose<cr>",
-        { noremap = true, silent = true, desc = "Run Api in verbose mode", buffer = 0 }
-      )
+      vim.keymap.set("n", "<C-l>", ":lua require('kulala').run()<CR>", { noremap = true, silent = true, buffer = 0 })
     end,
   },
   {

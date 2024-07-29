@@ -14,7 +14,6 @@ return {
         -- "rust_analyzer",
         -- add more arguments for adding more language servers
       })
-      opts.handlers.pyright = function() end
       -- opts.handlers.rust_analyzer= function() end
     end,
   },

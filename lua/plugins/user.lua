@@ -248,16 +248,6 @@ return {
     end,
   },
   {
-    "joshuadanpeterson/typewriter",
-    config = function()
-      require("typewriter").setup {
-        enable_with_zen_mode = true,
-        enable_with_true_zen = true,
-      }
-    end,
-    opts = {},
-  },
-  {
     "folke/zen-mode.nvim",
     opts = {
       on_open = function() vim.cmd "TWEnable" end,

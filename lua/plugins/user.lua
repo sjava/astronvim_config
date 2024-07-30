@@ -341,29 +341,16 @@ return {
     },
   },
   {
-    "viocost/viedit",
-    config = function()
-      require("viedit").setup()
-      local wk = require "which-key"
-      wk.add {
-        { "<Leader>I", desc = "Iedit" },
-      }
-      vim.keymap.set("n", ";", '<cmd>lua require("viedit").toggle_all()<CR>', {
-        desc = "viedit mode",
-      })
-
-      vim.keymap.set("v", ";", '<cmd>lua require("viedit").toggle_all()<CR>', {
-        desc = "viedit mode",
-      })
-
-      vim.keymap.set("n", "<leader>Ir", '<cmd>lua require("viedit").reload()<CR>', {
-        desc = "vedit mode reload",
-      })
-
-      vim.keymap.set("n", "<leader>If", '<cmd>lua require("viedit").restrict_to_function()<CR>', {
-        desc = "restrict to function",
-      })
-    end,
+    "dmtrKovalenko/caps-word.nvim",
+    event = "User AstroFile",
+    opts = {},
+    keys = {
+      {
+        mode = { "i", "n" },
+        "<C-s>",
+        "<cmd>lua require('caps-word').toggle()<CR>",
+      },
+    },
   },
   -- {
   --   "elixir-tools/elixir-tools.nvim",

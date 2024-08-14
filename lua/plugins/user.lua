@@ -78,7 +78,7 @@ return {
     "mistweaverco/kulala.nvim",
     ft = "http",
     config = function()
-      require("kulala").setup()
+      require("kulala").setup { default_view = "headers_body" }
       vim.keymap.set(
         "n",
         "<C-k>",

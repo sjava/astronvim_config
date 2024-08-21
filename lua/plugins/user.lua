@@ -378,6 +378,14 @@ return {
       },
     },
   },
+  {
+    "letieu/jot.lua",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = function()
+      require("jot").setup { notes_dir = "~/jot" }
+      vim.keymap.set("n", "<leader>fj", function() require("jot").open() end, { desc = "Open jot" })
+    end,
+  },
   -- {
   --   "elixir-tools/elixir-tools.nvim",
   --   ft = { "elixir" },

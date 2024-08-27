@@ -383,6 +383,35 @@ return {
       vim.keymap.set("n", "<leader>fj", function() require("jot").open() end, { desc = "Open jot" })
     end,
   },
+  {
+    "magicalne/nvim.ai",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    opts = {
+      provider = "deepseek", -- You can configure your provider, model or keymaps here.
+      keymaps = {
+        toggle = "<leader>ac", -- Toggle chat dialog
+        send = "<C-CR>", -- Send message in normal mode
+        close = "q", -- Close chat dialog
+        clear = "<C-l>", -- Clear chat history
+        inline_assist = "<leader>i", -- Run InlineAssist command with prompt
+        accept_code = "<leader>ia",
+        reject_code = "<leader>ij",
+      },
+    },
+  },
+  { -- override nvim-cmp plugin
+    "hrsh7th/nvim-cmp",
+    dependencies = {
+      "magicalne/nvim.ai", -- add cmp source as dependency of cmp
+    },
+    opts = function(_, opts)
+      opts.sources = opts.sources or {}
+      table.insert(opts.sources, { name = "nvimai_cmp_source" })
+    end,
+  },
   -- {
   --   "elixir-tools/elixir-tools.nvim",
   --   ft = { "elixir" },

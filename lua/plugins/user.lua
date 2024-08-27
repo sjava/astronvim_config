@@ -219,17 +219,6 @@ return {
     },
     config = function() require("cool-chunk").setup {} end,
   },
-  { "Bilal2453/luvit-meta", lazy = true }, -- optional `vim.uv` typings
-  { -- optional completion source for require statements and module annotations
-    "hrsh7th/nvim-cmp",
-    opts = function(_, opts)
-      opts.sources = opts.sources or {}
-      table.insert(opts.sources, {
-        name = "lazydev",
-        group_index = 0, -- set group index to 0 to skip loading LuaLS completions
-      })
-    end,
-  },
   {
     "ryo33/nvim-cmp-rust",
     dependencies = { "hrsh7th/nvim-cmp" },
@@ -358,10 +347,12 @@ return {
   },
   {
     "3rd/image.nvim",
+    enabled = function() return not vim.g.neovide end,
     config = function() require("image").setup {} end,
   },
   {
     "3rd/diagram.nvim",
+    enabled = function() return not vim.g.neovide end,
     ft = { "markdown" },
     dependencies = {
       "3rd/image.nvim",

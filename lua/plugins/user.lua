@@ -393,16 +393,6 @@ return {
       },
     },
   },
-  { -- override nvim-cmp plugin
-    "hrsh7th/nvim-cmp",
-    dependencies = {
-      "magicalne/nvim.ai", -- add cmp source as dependency of cmp
-    },
-    opts = function(_, opts)
-      opts.sources = opts.sources or {}
-      table.insert(opts.sources, { name = "nvimai_cmp_source" })
-    end,
-  },
   -- {
   --   "elixir-tools/elixir-tools.nvim",
   --   ft = { "elixir" },

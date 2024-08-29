@@ -393,6 +393,21 @@ return {
       },
     },
   },
+  {
+    "hrsh7th/nvim-cmp",
+    dependencies = {
+      "magicalne/nvim.ai",
+    },
+    opts = function(_, opts)
+      local sources = opts.sources or {}
+      table.insert(sources, { name = "nvimai_cmp_source" })
+    end,
+  },
+  {
+    "felpafel/inlay-hint.nvim",
+    event = "LspAttach",
+    config = true,
+  },
   -- {
   --   "elixir-tools/elixir-tools.nvim",
   --   ft = { "elixir" },

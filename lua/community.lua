@@ -115,7 +115,6 @@ return {
   { import = "astrocommunity.motion.flash-nvim" },
   { import = "astrocommunity.motion.mini-surround" },
   { import = "astrocommunity.motion.vim-matchup" },
-  { import = "astrocommunity.motion.tabout-nvim" },
   { import = "astrocommunity.motion.nvim-tree-pairs" },
   { import = "astrocommunity.motion.mini-ai" },
   {

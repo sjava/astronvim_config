@@ -44,19 +44,19 @@ return {
     ---@diagnostic disable: missing-fields
     config = {
       -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
-      basedpyright = {
-        settings = {
-          basedpyright = {
-            disableLanguageServices = false,
-            analysis = {
-              autoImportCompletions = true,
-              autoSearchPaths = true,
-              diagnosticMode = "openFilesOnly",
-              useLibraryCodeForTypes = true,
-            },
-          },
-        },
-      },
+      -- basedpyright = {
+      --   settings = {
+      --     basedpyright = {
+      --       -- disableLanguageServices = false,
+      --       analysis = {
+      --         autoImportCompletions = true,
+      --         autoSearchPaths = true,
+      --         diagnosticMode = "openFilesOnly",
+      --         useLibraryCodeForTypes = true,
+      --       },
+      --     },
+      --   },
+      -- },
       ["rust-analyzer"] = {
         capabilities = {
           workspace = {

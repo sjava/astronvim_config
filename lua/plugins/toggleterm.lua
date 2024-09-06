@@ -1,8 +1,11 @@
 return {
   "akinsho/toggleterm.nvim",
   opts = function(_, opts)
-    opts.insert_mappings = false
-    opts.terminal_mappings = false
-    opts.start_in_insert = false
+    return require("astrocore").extend_tbl(opts, {
+      insert_mappings = false,
+      terminal_mappings = false,
+      start_in_insert = false,
+      auto_scroll = false,
+    })
   end,
 }

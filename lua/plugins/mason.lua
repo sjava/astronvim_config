@@ -10,6 +10,13 @@ return {
       -- add more things to the ensure_installed table protecting against community packs modifying it
       opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, { "lua_ls" })
       -- opts.handlers.rust_analyzer= function() end
+      opts.handlers = {
+        function(server_name)
+          if server_name == "tsserver" then
+            server_name = "ts_ls"
+          end
+        end,
+      }
     end,
   },
   -- use mason-null-ls to configure Formatters/Linter installation for null-ls sources

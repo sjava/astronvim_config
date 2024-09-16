@@ -418,6 +418,11 @@ return {
       opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, { "zls" })
     end,
   },
+  {
+    "midoBB/nvim-quicktype",
+    cmd = "QuickType",
+    ft = { "typescript", "python", "java", "go", "rust", "cs", "swift", "elixir", "kotlin", "typescriptreact" },
+  },
   -- {
   --   "elixir-tools/elixir-tools.nvim",
   --   ft = { "elixir" },

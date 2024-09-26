@@ -371,35 +371,6 @@ return {
     end,
   },
   {
-    "magicalne/nvim.ai",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-treesitter/nvim-treesitter",
-    },
-    opts = {
-      provider = "deepseek", -- You can configure your provider, model or keymaps here.
-      keymaps = {
-        toggle = "<leader>ac", -- Toggle chat dialog
-        send = "<C-CR>", -- Send message in normal mode
-        close = "q", -- Close chat dialog
-        clear = "<C-l>", -- Clear chat history
-        inline_assist = "<leader>i", -- Run InlineAssist command with prompt
-        accept_code = "<leader>ia",
-        reject_code = "<leader>ij",
-      },
-    },
-  },
-  {
-    "hrsh7th/nvim-cmp",
-    dependencies = {
-      "magicalne/nvim.ai",
-    },
-    opts = function(_, opts)
-      local sources = opts.sources or {}
-      table.insert(sources, { name = "nvimai_cmp_source" })
-    end,
-  },
-  {
     "felpafel/inlay-hint.nvim",
     event = "LspAttach",
     config = true,

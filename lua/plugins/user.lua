@@ -399,38 +399,4 @@ return {
     cmd = "QuickType",
     ft = { "typescript", "python", "java", "go", "rust", "cs", "swift", "elixir", "kotlin", "typescriptreact" },
   },
-  -- {
-  --   "elixir-tools/elixir-tools.nvim",
-  --   ft = { "elixir" },
-  --   init = function()
-  --     local utils = require "astronvim.utils"
-  --     astronvim.lsp.skip_setup = utils.list_insert_unique(astronvim.lsp.skip_setup, "elixirls")
-  --   end,
-  --   version = "*",
-  --   event = { "BufReadPre", "BufNewFile" },
-  --   config = function()
-  --     local elixir = require "elixir"
-  --     local elixirls = require "elixir.elixirls"
-  --
-  --     elixir.setup {
-  --       nextls = { enable = true },
-  --       credo = {},
-  --       elixirls = {
-  --         enable = true,
-  --         cmd = "/home/zyb/.local/share/nvim/mason/bin/elixir-ls",
-  --         settings = elixirls.settings {
-  --           dialyzerEnabled = false,
-  --           enableTestLenses = false,
-  --         },
-  --         on_attach = function(client, bufnr)
-  --           vim.keymap.set("n", "<space>pf", ":ElixirFromPipe<cr>", { buffer = true, noremap = true })
-  --           vim.keymap.set("n", "<space>fp", ":ElixirToPipe<cr>", { buffer = true, noremap = true })
-  --         end,
-  --       },
-  --     }
-  --   end,
-  --   dependencies = {
-  --     "nvim-lua/plenary.nvim",
-  --   },
-  -- },
 }

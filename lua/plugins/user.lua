@@ -106,7 +106,19 @@ return {
         ":lua require('kulala').jump_next()<CR>",
         { noremap = true, silent = true, buffer = 0 }
       )
-      vim.keymap.set("n", "<C-l>", ":lua require('kulala').run()<CR>", { noremap = true, silent = true, buffer = 0 })
+      vim.keymap.set(
+        "n",
+        "<C-o>",
+        ":lua require('kulala').copy()<CR>",
+        { noremap = true, silent = true, buffer = 0, desc = "Copy the current request as a curl command" }
+      )
+      vim.keymap.set(
+        "n",
+        "<C-i>",
+        ":lua require('kulala').from_curl()<CR>",
+        { noremap = true, silent = true, buffer = 0, desc = "Paste curl from clipboard as http request" }
+      )
+      vim.keymap.set("n", "<CR>", ":lua require('kulala').run()<CR>", { noremap = true, silent = true, buffer = 0 })
     end,
   },
   {

@@ -34,25 +34,25 @@ return {
       }
     end,
   },
-  {
-    "sjava/readline.nvim",
-    event = "User AstroFile",
-    config = function()
-      local readline = require "readline"
-      vim.keymap.set("!", "<M-f>", readline.forward_word)
-      vim.keymap.set("!", "<M-b>", readline.backward_word)
-      vim.keymap.set("!", "<C-a>", readline.beginning_of_line)
-      vim.keymap.set("!", "<C-e>", readline.end_of_line)
-      vim.keymap.set("!", "<M-d>", readline.kill_word)
-      vim.keymap.set("!", "<M-BS>", readline.backward_kill_word)
-      vim.keymap.set("!", "<C-k>", readline.kill_line)
-      vim.keymap.set("!", "<C-u>", readline.backward_kill_line)
-      vim.keymap.set("!", "<C-d>", "<Delete>") -- delete-char
-      vim.keymap.set("!", "<C-h>", "<BS>") -- backward-delete-char
-      vim.keymap.set("!", "<C-f>", "<Right>") -- forward-char
-      vim.keymap.set("!", "<C-b>", "<Left>") -- backward-char
-    end,
-  },
+  -- {
+  --   "sjava/readline.nvim",
+  --   event = "User AstroFile",
+  --   config = function()
+  --     local readline = require "readline"
+  --     vim.keymap.set("!", "<M-f>", readline.forward_word)
+  --     vim.keymap.set("!", "<M-b>", readline.backward_word)
+  --     vim.keymap.set("!", "<C-a>", readline.beginning_of_line)
+  --     vim.keymap.set("!", "<C-e>", readline.end_of_line)
+  --     vim.keymap.set("!", "<M-d>", readline.kill_word)
+  --     vim.keymap.set("!", "<M-BS>", readline.backward_kill_word)
+  --     vim.keymap.set("!", "<C-k>", readline.kill_line)
+  --     vim.keymap.set("!", "<C-u>", readline.backward_kill_line)
+  --     vim.keymap.set("!", "<C-d>", "<Delete>") -- delete-char
+  --     vim.keymap.set("!", "<C-h>", "<BS>") -- backward-delete-char
+  --     vim.keymap.set("!", "<C-f>", "<Right>") -- forward-char
+  --     vim.keymap.set("!", "<C-b>", "<Left>") -- backward-char
+  --   end,
+  -- },
   {
     "vim-test/vim-test",
     event = "User AstroFile",
@@ -159,15 +159,15 @@ return {
     ft = "qf",
     opts = {},
   },
-  {
-    "TwIStOy/luasnip-snippets",
-    dependencies = { "L3MON4D3/LuaSnip" },
-    event = { "InsertEnter" },
-    config = function()
-      -- register all snippets into LuaSnip
-      require("luasnip-snippets").setup()
-    end,
-  },
+  -- {
+  --   "TwIStOy/luasnip-snippets",
+  --   dependencies = { "L3MON4D3/LuaSnip" },
+  --   event = { "InsertEnter" },
+  --   config = function()
+  --     -- register all snippets into LuaSnip
+  --     require("luasnip-snippets").setup()
+  --   end,
+  -- },
   {
     "rebelot/heirline.nvim",
     opts = function(_, opts)
@@ -231,37 +231,37 @@ return {
     },
     config = function() require("cool-chunk").setup {} end,
   },
-  {
-    "ryo33/nvim-cmp-rust",
-    dependencies = { "hrsh7th/nvim-cmp" },
-    config = function()
-      local cmp = require "cmp"
-      local compare = require "cmp.config.compare"
-      cmp.setup.filetype({ "rust" }, {
-        sorting = {
-          priority_weight = 2,
-          comparators = {
-            -- deprioritize `.box`, `.mut`, etc.
-            require("cmp-rust").deprioritize_postfix,
-            -- deprioritize `Borrow::borrow` and `BorrowMut::borrow_mut`
-            require("cmp-rust").deprioritize_borrow,
-            -- deprioritize `Deref::deref` and `DerefMut::deref_mut`
-            require("cmp-rust").deprioritize_deref,
-            -- deprioritize `Into::into`, `Clone::clone`, etc.
-            require("cmp-rust").deprioritize_common_traits,
-            compare.offset,
-            compare.exact,
-            compare.score,
-            compare.recently_used,
-            compare.locality,
-            compare.sort_text,
-            compare.length,
-            compare.order,
-          },
-        },
-      })
-    end,
-  },
+  -- {
+  --   "ryo33/nvim-cmp-rust",
+  --   dependencies = { "hrsh7th/nvim-cmp" },
+  --   config = function()
+  --     local cmp = require "cmp"
+  --     local compare = require "cmp.config.compare"
+  --     cmp.setup.filetype({ "rust" }, {
+  --       sorting = {
+  --         priority_weight = 2,
+  --         comparators = {
+  --           -- deprioritize `.box`, `.mut`, etc.
+  --           require("cmp-rust").deprioritize_postfix,
+  --           -- deprioritize `Borrow::borrow` and `BorrowMut::borrow_mut`
+  --           require("cmp-rust").deprioritize_borrow,
+  --           -- deprioritize `Deref::deref` and `DerefMut::deref_mut`
+  --           require("cmp-rust").deprioritize_deref,
+  --           -- deprioritize `Into::into`, `Clone::clone`, etc.
+  --           require("cmp-rust").deprioritize_common_traits,
+  --           compare.offset,
+  --           compare.exact,
+  --           compare.score,
+  --           compare.recently_used,
+  --           compare.locality,
+  --           compare.sort_text,
+  --           compare.length,
+  --           compare.order,
+  --         },
+  --       },
+  --     })
+  --   end,
+  -- },
   {
     "ysmb-wtsg/in-and-out.nvim",
     keys = {
@@ -391,5 +391,24 @@ return {
     "midoBB/nvim-quicktype",
     cmd = "QuickType",
     ft = { "typescript", "python", "java", "go", "rust", "cs", "swift", "elixir", "kotlin", "typescriptreact" },
+  },
+  {
+    "Saghen/blink.cmp",
+    event = "InsertEnter",
+    -- version = "v0.*",
+    build = "cargo build --release",
+    dependencies = { "rafamadriz/friendly-snippets" },
+    opts = {
+      highlight = { use_nvim_cmp_as_default = true },
+      nerd_font_variant = "mono",
+      trigger = { signature_help = { enabled = true } },
+    },
+    specs = {
+      -- disable built in completion plugins
+      { "hrsh7th/nvim-cmp", enabled = false },
+      { "rcarriga/cmp-dap", enabled = false },
+      { "L3MON4D3/LuaSnip", enabled = false },
+      { "onsails/lspkind.nvim", enabled = false },
+    },
   },
 }

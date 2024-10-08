@@ -59,7 +59,7 @@ return {
   },
   { import = "astrocommunity.pack.rust" },
 
-  { import = "astrocommunity.completion.cmp-cmdline" },
+  -- { import = "astrocommunity.completion.cmp-cmdline" },
   { import = "astrocommunity.pack.zig" },
   { import = "astrocommunity.pack.toml" },
   { import = "astrocommunity.pack.typescript" },

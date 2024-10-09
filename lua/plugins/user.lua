@@ -402,6 +402,9 @@ return {
       highlight = { use_nvim_cmp_as_default = true },
       nerd_font_variant = "mono",
       trigger = { signature_help = { enabled = true } },
+      keymap = {
+        accept = "<C-y>",
+      },
     },
     specs = {
       -- disable built in completion plugins

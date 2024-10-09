@@ -115,6 +115,6 @@ return {
 
   { import = "astrocommunity.neovim-lua-development.lazydev-nvim" },
   { import = "astrocommunity.neovim-lua-development.helpview-nvim" },
-  -- { import = "astrocommunity.completion.copilot-lua-cmp" },
+  -- { import = "astrocommunity.completion.copilot-lua" },
   { import = "astrocommunity.completion.supermaven-nvim" },
 }

@@ -128,7 +128,7 @@ return {
           "n",
           "<Leader>la",
           function() vim.cmd.RustLsp "codeAction" end,
-          { silent = true, buffer = bufnr, desc = "Code action test" }
+          { silent = true, buffer = bufnr, desc = "Code Action" }
         )
         vim.keymap.set(
           "n",

@@ -411,4 +411,28 @@ return {
       { "onsails/lspkind.nvim", enabled = false },
     },
   },
+  {
+    "saecki/crates.nvim",
+    event = { "BufRead Cargo.toml" },
+    config = function()
+      require("crates").setup {
+        lsp = {
+          enabled = true,
+          name = "crates.nvim",
+          ---@diagnostic disable-next-line: unused-local
+          on_attach = function(_client, bufnr)
+            vim.keymap.set("n", "<leader>la", vim.lsp.buf.code_action, { buffer = bufnr, desc = "Code Action" })
+          end,
+          actions = true,
+          completion = true,
+          hover = true,
+        },
+        completion = {
+          crates = {
+            enabled = true,
+          },
+        },
+      }
+    end,
+  },
 }

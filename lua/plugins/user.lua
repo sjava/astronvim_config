@@ -421,6 +421,19 @@ return {
           name = "crates.nvim",
           ---@diagnostic disable-next-line: unused-local
           on_attach = function(_client, bufnr)
+            local crates = require "crates"
+            vim.keymap.set(
+              "n",
+              "<leader>lx",
+              crates.expand_plain_crate_to_inline_table,
+              { buffer = bufnr, desc = "Expand Plain Crate" }
+            )
+            vim.keymap.set(
+              "n",
+              "<leader>lX",
+              crates.extract_crate_into_table,
+              { buffer = bufnr, desc = "Extract Crate" }
+            )
             vim.keymap.set("n", "<leader>la", vim.lsp.buf.code_action, { buffer = bufnr, desc = "Code Action" })
           end,
           actions = true,

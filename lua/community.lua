@@ -73,6 +73,19 @@ return {
   { import = "astrocommunity.pack.proto" },
   { import = "astrocommunity.diagnostics.trouble-nvim" },
   { import = "astrocommunity.utility.noice-nvim" },
+  {
+    "folke/noice.nvim",
+    opts = {
+      lsp = {
+        override = {
+          ["cmp.entry.get_documentation"] = false,
+        },
+        signature = {
+          enabled = false,
+        },
+      },
+    },
+  },
   { import = "astrocommunity.indent.mini-indentscope" },
   { import = "astrocommunity.motion.mini-bracketed" },
   { import = "astrocommunity.motion.flash-nvim" },

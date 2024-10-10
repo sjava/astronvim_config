@@ -404,8 +404,8 @@ return {
       trigger = {
         signature_help = { enabled = true },
       },
-      keymap = {
-        accept = "<C-y>",
+      windows = {
+        signature_help = { border = "rounded" },
       },
     },
     specs = {

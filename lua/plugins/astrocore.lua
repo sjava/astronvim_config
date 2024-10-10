@@ -88,9 +88,10 @@ return {
         ["<Leader>jl"] = { "<cmd>TestLast<cr>", desc = "test last" },
         ["<Leader>jv"] = { "<cmd>TestVisit<cr>", desc = "test visit" },
 
-        ["<Leader>jj"] = { "<cmd>AnyJump<cr>", desc = "Jump to definition under cursor" },
-        ["<Leader>jb"] = { "<cmd>AnyJumpBack<cr>", desc = "open previous opened file (after jump)" },
-        ["<Leader>jr"] = { "<cmd>AnyJumpLastResults<cr>", desc = "open last closed anyjump window" },
+        ["<Leader>A"] = { desc = "AnyJump" },
+        ["<Leader>Aj"] = { "<cmd>AnyJump<cr>", desc = "Jump to definition under cursor" },
+        ["<Leader>Ab"] = { "<cmd>AnyJumpBack<cr>", desc = "open previous opened file (after jump)" },
+        ["<Leader>Al"] = { "<cmd>AnyJumpLastResults<cr>", desc = "open last closed anyjump window" },
 
         ["<Leader>ws"] = { "<C-w>s", desc = "horizontal split window" },
         ["<Leader>wv"] = { "<C-w>v", desc = "vertical split window" },

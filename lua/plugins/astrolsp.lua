@@ -126,12 +126,6 @@ return {
       if client.name == "rust-analyzer" then
         vim.keymap.set(
           "n",
-          "<Leader>la",
-          function() vim.cmd.RustLsp "codeAction" end,
-          { silent = true, buffer = bufnr, desc = "Code Action" }
-        )
-        vim.keymap.set(
-          "n",
           "<Leader>lc",
           function() vim.cmd.RustLsp "openCargo" end,
           { buffer = true, desc = "Open Cargo.toml" }

@@ -130,4 +130,5 @@ return {
   { import = "astrocommunity.neovim-lua-development.helpview-nvim" },
   -- { import = "astrocommunity.completion.copilot-lua" },
   { import = "astrocommunity.completion.supermaven-nvim" },
+  { import = "astrocommunity.search.grug-far-nvim" },
 }

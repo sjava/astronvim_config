@@ -34,25 +34,6 @@ return {
       }
     end,
   },
-  -- {
-  --   "sjava/readline.nvim",
-  --   event = "User AstroFile",
-  --   config = function()
-  --     local readline = require "readline"
-  --     vim.keymap.set("!", "<M-f>", readline.forward_word)
-  --     vim.keymap.set("!", "<M-b>", readline.backward_word)
-  --     vim.keymap.set("!", "<C-a>", readline.beginning_of_line)
-  --     vim.keymap.set("!", "<C-e>", readline.end_of_line)
-  --     vim.keymap.set("!", "<M-d>", readline.kill_word)
-  --     vim.keymap.set("!", "<M-BS>", readline.backward_kill_word)
-  --     vim.keymap.set("!", "<C-k>", readline.kill_line)
-  --     vim.keymap.set("!", "<C-u>", readline.backward_kill_line)
-  --     vim.keymap.set("!", "<C-d>", "<Delete>") -- delete-char
-  --     vim.keymap.set("!", "<C-h>", "<BS>") -- backward-delete-char
-  --     vim.keymap.set("!", "<C-f>", "<Right>") -- forward-char
-  --     vim.keymap.set("!", "<C-b>", "<Left>") -- backward-char
-  --   end,
-  -- },
   {
     "vim-test/vim-test",
     event = "User AstroFile",
@@ -159,15 +140,6 @@ return {
     ft = "qf",
     opts = {},
   },
-  -- {
-  --   "TwIStOy/luasnip-snippets",
-  --   dependencies = { "L3MON4D3/LuaSnip" },
-  --   event = { "InsertEnter" },
-  --   config = function()
-  --     -- register all snippets into LuaSnip
-  --     require("luasnip-snippets").setup()
-  --   end,
-  -- },
   {
     "rebelot/heirline.nvim",
     opts = function(_, opts)
@@ -231,37 +203,6 @@ return {
     },
     config = function() require("cool-chunk").setup {} end,
   },
-  -- {
-  --   "ryo33/nvim-cmp-rust",
-  --   dependencies = { "hrsh7th/nvim-cmp" },
-  --   config = function()
-  --     local cmp = require "cmp"
-  --     local compare = require "cmp.config.compare"
-  --     cmp.setup.filetype({ "rust" }, {
-  --       sorting = {
-  --         priority_weight = 2,
-  --         comparators = {
-  --           -- deprioritize `.box`, `.mut`, etc.
-  --           require("cmp-rust").deprioritize_postfix,
-  --           -- deprioritize `Borrow::borrow` and `BorrowMut::borrow_mut`
-  --           require("cmp-rust").deprioritize_borrow,
-  --           -- deprioritize `Deref::deref` and `DerefMut::deref_mut`
-  --           require("cmp-rust").deprioritize_deref,
-  --           -- deprioritize `Into::into`, `Clone::clone`, etc.
-  --           require("cmp-rust").deprioritize_common_traits,
-  --           compare.offset,
-  --           compare.exact,
-  --           compare.score,
-  --           compare.recently_used,
-  --           compare.locality,
-  --           compare.sort_text,
-  --           compare.length,
-  --           compare.order,
-  --         },
-  --       },
-  --     })
-  --   end,
-  -- },
   {
     "ysmb-wtsg/in-and-out.nvim",
     keys = {
@@ -277,56 +218,6 @@ return {
     opts = function(_, opts)
       local maps = opts.mappings
       maps.n["<Leader>w"] = { desc = "windows" }
-    end,
-  },
-  {
-    "MagicDuck/grug-far.nvim",
-    cmd = "GrugFar",
-    specs = {
-      {
-        "AstroNvim/astroui",
-        ---@type AstroUIOpts
-        opts = {
-          icons = {
-            GrugFar = "󰛔",
-          },
-        },
-      },
-      {
-        "AstroNvim/astrocore",
-        ---@param opts AstroCoreOpts
-        opts = function(_, opts)
-          local maps = opts.mappings and opts.mappings or require("astrocore").empty_map_table()
-          maps.n["<Leader>s"] = { desc = "Search" }
-          maps.n["<Leader>sg"] = {
-            function() require("grug-far").grug_far {} end,
-            desc = "Run grup-far",
-          }
-          maps.x["<Leader>sg"] = {
-            function() require("grug-far").with_visual_selection {} end,
-            desc = "Run grup-far",
-          }
-        end,
-      },
-      {
-        "zbirenbaum/copilot.lua",
-        optional = true,
-        opts = {
-          filetypes = {
-            ["grug-far"] = false,
-            ["grug-far-history"] = false,
-          },
-        },
-      },
-    },
-    ---@param opts GrugFarOptionsOverride
-    -- NOTE: Wrapping opts into a function, because `astrocore` can set vim options
-    opts = function(_, opts)
-      return require("astrocore").extend_tbl(opts, {
-        icons = {
-          enabled = vim.g.icons_enabled,
-        },
-      } --[[@as GrugFarOptionsOverride]])
     end,
   },
   {

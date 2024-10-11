@@ -39,7 +39,7 @@ return {
         -- ["test#strategy"] = "wezterm",
         ["test#strategy"] = "shtuff",
         shtuff_receiver = "devrunner",
-        ["test#rust#cargotest#test_options"] = "-- --nocapture",
+        ["test#rust#cargonextest#test_options"] = "-- --nocapture",
         -- ["test#rust#runner"] = "cargotest",
         any_jump_disable_default_keybindings = 1,
       },

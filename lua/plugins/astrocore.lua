@@ -39,8 +39,11 @@ return {
         -- ["test#strategy"] = "wezterm",
         ["test#strategy"] = "shtuff",
         shtuff_receiver = "devrunner",
-        ["test#rust#cargonextest#test_options"] = "-- --nocapture",
-        -- ["test#rust#runner"] = "cargotest",
+        ["test#rust#runner"] = "cargotest",
+        -- ["test#rust#cargotest#test_options"] = "-- --nocapture",
+        ["test#rust#cargotest#test_options"] = {
+          nearest = { "--", "--nocapture" },
+        },
         any_jump_disable_default_keybindings = 1,
       },
     },

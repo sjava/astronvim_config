@@ -284,8 +284,7 @@ return {
     ft = { "typescript", "python", "java", "go", "rust", "cs", "swift", "elixir", "kotlin", "typescriptreact" },
   },
   {
-    -- "Saghen/blink.cmp",
-    "neovim-plugin/blink.cmp",
+    "Saghen/blink.cmp",
     event = "InsertEnter",
     -- version = "v0.*",
     build = "cargo build --release",

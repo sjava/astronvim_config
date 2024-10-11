@@ -284,18 +284,19 @@ return {
     ft = { "typescript", "python", "java", "go", "rust", "cs", "swift", "elixir", "kotlin", "typescriptreact" },
   },
   {
-    "Saghen/blink.cmp",
+    -- "Saghen/blink.cmp",
+    "neovim-plugin/blink.cmp",
     event = "InsertEnter",
     -- version = "v0.*",
     build = "cargo build --release",
-    commit = "88f71b16ecd650775516bd2b30ab808283b7242c",
+    -- commit = "88f71b16ecd650775516bd2b30ab808283b7242c",
     dependencies = { "rafamadriz/friendly-snippets" },
     opts = {
       highlight = { use_nvim_cmp_as_default = true },
       nerd_font_variant = "mono",
-      keymap = {
-        accept = "<CR>",
-      },
+      -- keymap = {
+      --   accept = "<CR>",
+      -- },
       trigger = {
         signature_help = { enabled = true },
       },

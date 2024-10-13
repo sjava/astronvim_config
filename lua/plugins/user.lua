@@ -286,9 +286,7 @@ return {
   {
     "Saghen/blink.cmp",
     event = "InsertEnter",
-    -- version = "v0.*",
     build = "cargo build --release",
-    -- commit = "88f71b16ecd650775516bd2b30ab808283b7242c",
     dependencies = { "rafamadriz/friendly-snippets" },
     opts = {
       highlight = { use_nvim_cmp_as_default = true },
@@ -347,5 +345,9 @@ return {
         },
       }
     end,
+  },
+  {
+    "tris203/precognition.nvim",
+    opts = {},
   },
 }

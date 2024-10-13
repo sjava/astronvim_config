@@ -346,8 +346,4 @@ return {
       }
     end,
   },
-  {
-    "tris203/precognition.nvim",
-    opts = {},
-  },
 }

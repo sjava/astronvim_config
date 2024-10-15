@@ -43,19 +43,6 @@ return {
     config = function() require("goto-preview").setup {} end,
   },
   {
-    "neovim/nvim-lspconfig",
-    dependencies = {
-      {
-        "SmiteshP/nvim-navbuddy",
-        dependencies = {
-          "SmiteshP/nvim-navic",
-          "MunifTanjim/nui.nvim",
-        },
-        opts = { lsp = { auto_attach = true } },
-      },
-    },
-  },
-  {
     "vxpm/ferris.nvim",
     ft = "rust",
     opts = { create_commands = false },

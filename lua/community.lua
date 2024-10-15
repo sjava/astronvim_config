@@ -131,4 +131,5 @@ return {
   -- { import = "astrocommunity.completion.copilot-lua" },
   { import = "astrocommunity.completion.supermaven-nvim" },
   { import = "astrocommunity.search.grug-far-nvim" },
+  { import = "astrocommunity.bars-and-lines.dropbar-nvim" },
 }

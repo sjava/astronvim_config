@@ -289,13 +289,18 @@ return {
         scroll_documentation_up = "<C-D>",
         scroll_documentation_down = "<C-U>",
       },
+      accept = {
+        auto_brackets = {
+          enabled = true,
+        },
+      },
       windows = {
         autocomplete = {
           border = "rounded",
           winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
         },
         documentation = {
-          auto_show = false,
+          auto_show = true,
           border = "rounded",
           winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
         },

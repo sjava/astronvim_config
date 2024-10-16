@@ -295,6 +295,7 @@ return {
           winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
         },
         documentation = {
+          auto_show = false,
           border = "rounded",
           winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
         },

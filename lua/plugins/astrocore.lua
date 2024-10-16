@@ -82,7 +82,6 @@ return {
         ["<Leader>b"] = { desc = "Buffers" },
         -- quick save
         -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
-        ["<Leader>ln"] = { function() require("nvim-navbuddy").open() end, desc = "navbuddy" },
 
         ["<Leader>j"] = { desc = "vim-test" },
         ["<Leader>jn"] = { "<cmd>TestNearest<cr>", desc = "test near" },

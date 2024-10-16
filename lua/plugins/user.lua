@@ -288,11 +288,8 @@ return {
         select_next = { "<Down>", "<C-N>", "<C-J>" },
         scroll_documentation_up = "<C-D>",
         scroll_documentation_down = "<C-U>",
-      },
-      accept = {
-        auto_brackets = {
-          enabled = true,
-        },
+        show_documentation = "<C-F>",
+        hide_documentation = "<C-F>",
       },
       windows = {
         autocomplete = {
@@ -300,7 +297,7 @@ return {
           winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
         },
         documentation = {
-          auto_show = true,
+          auto_show = false,
           border = "rounded",
           winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
         },

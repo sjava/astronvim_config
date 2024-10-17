@@ -128,8 +128,20 @@ return {
 
   { import = "astrocommunity.neovim-lua-development.lazydev-nvim" },
   { import = "astrocommunity.neovim-lua-development.helpview-nvim" },
-  -- { import = "astrocommunity.completion.copilot-lua" },
-  { import = "astrocommunity.completion.supermaven-nvim" },
+
+  { import = "astrocommunity.completion.copilot-lua" },
+  {
+    "zbirenbaum/copilot.lua",
+    opts = {
+      suggestion = {
+        keymap = {
+          accept = "<C-l>",
+        },
+      },
+    },
+  },
+
+  -- { import = "astrocommunity.completion.supermaven-nvim" },
   { import = "astrocommunity.search.grug-far-nvim" },
   { import = "astrocommunity.bars-and-lines.dropbar-nvim" },
 }

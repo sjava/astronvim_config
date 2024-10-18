@@ -136,6 +136,8 @@ return {
       suggestion = {
         keymap = {
           accept = "<C-l>",
+          accept_word = "<C-w>",
+          accept_line = "<C-j>",
         },
       },
     },

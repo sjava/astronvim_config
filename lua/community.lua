@@ -144,5 +144,4 @@ return {
 
   { import = "astrocommunity.search.grug-far-nvim" },
   { import = "astrocommunity.bars-and-lines.dropbar-nvim" },
-  { import = "astrocommunity.git.nvim-tinygit" },
 }

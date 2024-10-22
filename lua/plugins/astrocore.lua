@@ -64,19 +64,6 @@ return {
         --   desc = "Previous buffer",
         -- },
 
-        ["<Leader>ue"] = {
-          function() require("copilot.suggestion").toggle_auto_trigger() end,
-          desc = "toggle copilot suggestion",
-        },
-        -- mappings seen under group name "Buffer"
-        ["<Leader>bD"] = {
-          function()
-            require("astroui.status.heirline").buffer_picker(
-              function(bufnr) require("astrocore.buffer").close(bufnr) end
-            )
-          end,
-          desc = "Pick to close",
-        },
         -- tables with just a `desc` key will be registered with which-key if it's installed
         -- this is useful for naming menus
         ["<Leader>b"] = { desc = "Buffers" },
@@ -120,8 +107,6 @@ return {
         ["gpt"] = { "<cmd>lua require('goto-preview').goto_preview_type_definition()<CR>", desc = "type definition" },
         ["gpi"] = { "<cmd>lua require('goto-preview').goto_preview_implementation()<CR>", desc = "implementation" },
         ["gpr"] = { "<cmd>lua require('goto-preview').goto_preview_references()<CR>", desc = "references" },
-
-        ["<C-c>"] = { desc = "copilot chat" },
       },
       v = {
         ["<Leader>jj"] = { "<cmd>AnyJumpVisual<cr>", desc = "jump to selected text" },

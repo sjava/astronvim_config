@@ -266,11 +266,6 @@ return {
     config = true,
   },
   {
-    "midoBB/nvim-quicktype",
-    cmd = "QuickType",
-    ft = { "typescript", "python", "java", "go", "rust", "cs", "swift", "elixir", "kotlin", "typescriptreact" },
-  },
-  {
     "Saghen/blink.cmp",
     event = "InsertEnter",
     build = "cargo build --release",
@@ -290,15 +285,6 @@ return {
         scroll_documentation_down = "<C-U>",
         show_documentation = "<C-F>",
         hide_documentation = "<C-F>",
-      },
-      sources = {
-        providers = {
-          { "blink.cmp.sources.lsp", name = "LSP" },
-          { "blink.cmp.sources.path", name = "Path", score_offset = 3 },
-          { "blink.cmp.sources.snippets", name = "Snippets", score_offset = -3 },
-          { "blink.cmp.sources.buffer", name = "Buffer", fallback_for = { "LSP" } },
-          { "blink-cmp-rg", name = "Rg" },
-        },
       },
       windows = {
         autocomplete = {

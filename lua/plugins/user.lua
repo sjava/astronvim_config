@@ -274,7 +274,7 @@ return {
     "Saghen/blink.cmp",
     event = "InsertEnter",
     build = "cargo build --release",
-    dependencies = { "rafamadriz/friendly-snippets" },
+    dependencies = { "rafamadriz/friendly-snippets", "niuiic/blink-cmp-rg.nvim" },
     opts = {
       highlight = { use_nvim_cmp_as_default = true },
       nerd_font_variant = "mono",
@@ -290,6 +290,15 @@ return {
         scroll_documentation_down = "<C-U>",
         show_documentation = "<C-F>",
         hide_documentation = "<C-F>",
+      },
+      sources = {
+        providers = {
+          { "blink.cmp.sources.lsp", name = "LSP" },
+          { "blink.cmp.sources.path", name = "Path", score_offset = 3 },
+          { "blink.cmp.sources.snippets", name = "Snippets", score_offset = -3 },
+          { "blink.cmp.sources.buffer", name = "Buffer", fallback_for = { "LSP" } },
+          { "blink-cmp-rg", name = "Rg" },
+        },
       },
       windows = {
         autocomplete = {

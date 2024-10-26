@@ -289,16 +289,13 @@ return {
       windows = {
         autocomplete = {
           border = "rounded",
-          winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
         },
         documentation = {
           auto_show = false,
           border = "rounded",
-          winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
         },
         signature_help = {
           border = "rounded",
-          winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder",
         },
       },
     },

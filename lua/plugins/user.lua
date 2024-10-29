@@ -269,23 +269,14 @@ return {
     "Saghen/blink.cmp",
     event = "InsertEnter",
     build = "cargo build --release",
-    dependencies = { "rafamadriz/friendly-snippets", "niuiic/blink-cmp-rg.nvim" },
+    dependencies = { "rafamadriz/friendly-snippets" },
     opts = {
       highlight = { use_nvim_cmp_as_default = true },
       nerd_font_variant = "mono",
       trigger = {
         signature_help = { enabled = true },
       },
-      keymap = {
-        show = { "<C-Space>", "<C-N>", "<C-P>" },
-        accept = { "<Tab>", "<CR>" },
-        select_prev = { "<Up>", "<C-P>", "<C-K>" },
-        select_next = { "<Down>", "<C-N>", "<C-J>" },
-        scroll_documentation_up = "<C-D>",
-        scroll_documentation_down = "<C-U>",
-        show_documentation = "<C-F>",
-        hide_documentation = "<C-F>",
-      },
+      keymap = "default",
       windows = {
         autocomplete = {
           border = "rounded",

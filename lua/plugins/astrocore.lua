@@ -96,10 +96,6 @@ return {
           end,
           desc = "Pick a window",
         },
-        ["<Leader>wz"] = {
-          function() require("zen-mode").toggle() end,
-          desc = "toggle zen mode",
-        },
         ["<C-w>z"] = { "<cmd>WindowsMaximize<cr>", desc = "maximize windows" },
 
         ["gp"] = { desc = "Goto Preview" },

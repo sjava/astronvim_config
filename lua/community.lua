@@ -100,15 +100,6 @@ return {
 
   { import = "astrocommunity.editing-support.todo-comments-nvim" },
   { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
-  { import = "astrocommunity.editing-support.zen-mode-nvim" },
-  {
-    "folke/zen-mode.nvim",
-    opts = {
-      window = {
-        options = { number = true, relativenumber = true },
-      },
-    },
-  },
   { import = "astrocommunity.editing-support.suda-vim" },
   { import = "astrocommunity.editing-support.treesj" },
   { import = "astrocommunity.editing-support.telescope-undo-nvim" },

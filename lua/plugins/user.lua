@@ -303,36 +303,21 @@ return {
     event = { "BufRead Cargo.toml" },
     config = function()
       require("crates").setup {
-        lsp = {
+        completion = {
+          cmp = {
+            enabled = false,
+          },
+        },
+        null_ls = {
           enabled = true,
           name = "crates.nvim",
-          ---@diagnostic disable-next-line: unused-local
-          on_attach = function(_client, bufnr)
-            local crates = require "crates"
-            vim.keymap.set(
-              "n",
-              "<leader>lx",
-              crates.expand_plain_crate_to_inline_table,
-              { buffer = bufnr, desc = "Expand Plain Crate" }
-            )
-            vim.keymap.set(
-              "n",
-              "<leader>lX",
-              crates.extract_crate_into_table,
-              { buffer = bufnr, desc = "Extract Crate" }
-            )
-            vim.keymap.set("n", "<leader>la", vim.lsp.buf.code_action, { buffer = bufnr, desc = "Code Action" })
-          end,
-          actions = true,
-          completion = true,
-          hover = true,
-        },
-        completion = {
-          crates = {
-            enabled = true,
-          },
         },
       }
     end,
+  },
+  {
+    "cdmill/focus.nvim",
+    cmd = { "Focus", "Zen", "Narrow" },
+    opts = {},
   },
 }

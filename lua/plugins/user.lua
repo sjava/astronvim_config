@@ -312,6 +312,12 @@ return {
           enabled = true,
           name = "crates.nvim",
         },
+        lsp = {
+          enabled = true,
+          actions = false,
+          completion = true,
+          hover = true,
+        },
       }
     end,
   },

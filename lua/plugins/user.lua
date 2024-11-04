@@ -276,13 +276,13 @@ return {
       trigger = {
         signature_help = { enabled = true },
       },
-      keymap = "default",
+      keymap = { preset = "enter" },
       windows = {
         autocomplete = {
           border = "rounded",
         },
         documentation = {
-          auto_show = false,
+          auto_show = true,
           border = "rounded",
         },
         signature_help = {

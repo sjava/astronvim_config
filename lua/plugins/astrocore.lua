@@ -44,7 +44,6 @@ return {
         ["test#rust#cargotest#test_options"] = {
           nearest = { "--", "--nocapture" },
         },
-        any_jump_disable_default_keybindings = 1,
       },
     },
     -- Mappings can be configured through AstroCore as well.
@@ -77,11 +76,6 @@ return {
         ["<Leader>jl"] = { "<cmd>TestLast<cr>", desc = "test last" },
         ["<Leader>jv"] = { "<cmd>TestVisit<cr>", desc = "test visit" },
 
-        ["<Leader>A"] = { desc = "AnyJump" },
-        ["<Leader>Aj"] = { "<cmd>AnyJump<cr>", desc = "Jump to definition under cursor" },
-        ["<Leader>Ab"] = { "<cmd>AnyJumpBack<cr>", desc = "open previous opened file (after jump)" },
-        ["<Leader>Al"] = { "<cmd>AnyJumpLastResults<cr>", desc = "open last closed anyjump window" },
-
         ["<Leader>ws"] = { "<C-w>s", desc = "horizontal split window" },
         ["<Leader>wv"] = { "<C-w>v", desc = "vertical split window" },
         ["<Leader>wh"] = { "<C-w>h", desc = "left window" },
@@ -104,9 +98,7 @@ return {
         ["gpi"] = { "<cmd>lua require('goto-preview').goto_preview_implementation()<CR>", desc = "implementation" },
         ["gpr"] = { "<cmd>lua require('goto-preview').goto_preview_references()<CR>", desc = "references" },
       },
-      v = {
-        ["<Leader>jj"] = { "<cmd>AnyJumpVisual<cr>", desc = "jump to selected text" },
-      },
+      v = {},
       t = {
         -- setting a mapping to false will disable it
         -- ["<esc>"] = false,

@@ -179,10 +179,6 @@ return {
     },
   },
   {
-    "pechorin/any-jump.vim",
-    event = "User AstroFile",
-  },
-  {
     "Mr-LLLLL/cool-chunk.nvim",
     event = { "CursorHold", "CursorHoldI" },
     dependencies = {

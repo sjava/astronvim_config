@@ -261,62 +261,62 @@ return {
     event = "LspAttach",
     config = true,
   },
-  {
-    "Saghen/blink.cmp",
-    event = "InsertEnter",
-    build = "cargo build --release",
-    dependencies = { "rafamadriz/friendly-snippets" },
-    opts = {
-      highlight = { use_nvim_cmp_as_default = true },
-      nerd_font_variant = "mono",
-      trigger = {
-        signature_help = { enabled = true },
-      },
-      keymap = { preset = "enter" },
-      windows = {
-        autocomplete = {
-          border = "rounded",
-        },
-        documentation = {
-          auto_show = true,
-          border = "rounded",
-        },
-        signature_help = {
-          border = "rounded",
-        },
-      },
-    },
-    specs = {
-      -- disable built in completion plugins
-      { "hrsh7th/nvim-cmp", enabled = false },
-      { "rcarriga/cmp-dap", enabled = false },
-      { "L3MON4D3/LuaSnip", enabled = false },
-      { "onsails/lspkind.nvim", enabled = false },
-    },
-  },
-  {
-    "saecki/crates.nvim",
-    event = { "BufRead Cargo.toml" },
-    config = function()
-      require("crates").setup {
-        completion = {
-          cmp = {
-            enabled = false,
-          },
-        },
-        null_ls = {
-          enabled = true,
-          name = "crates.nvim",
-        },
-        lsp = {
-          enabled = true,
-          actions = false,
-          completion = true,
-          hover = true,
-        },
-      }
-    end,
-  },
+  -- {
+  --   "Saghen/blink.cmp",
+  --   event = "InsertEnter",
+  --   build = "cargo build --release",
+  --   dependencies = { "rafamadriz/friendly-snippets" },
+  --   opts = {
+  --     highlight = { use_nvim_cmp_as_default = true },
+  --     nerd_font_variant = "mono",
+  --     trigger = {
+  --       signature_help = { enabled = true },
+  --     },
+  --     keymap = { preset = "enter" },
+  --     windows = {
+  --       autocomplete = {
+  --         border = "rounded",
+  --       },
+  --       documentation = {
+  --         auto_show = true,
+  --         border = "rounded",
+  --       },
+  --       signature_help = {
+  --         border = "rounded",
+  --       },
+  --     },
+  --   },
+  --   specs = {
+  --     -- disable built in completion plugins
+  --     { "hrsh7th/nvim-cmp", enabled = false },
+  --     { "rcarriga/cmp-dap", enabled = false },
+  --     { "L3MON4D3/LuaSnip", enabled = false },
+  --     { "onsails/lspkind.nvim", enabled = false },
+  --   },
+  -- },
+  -- {
+  --   "saecki/crates.nvim",
+  --   event = { "BufRead Cargo.toml" },
+  --   config = function()
+  --     require("crates").setup {
+  --       completion = {
+  --         cmp = {
+  --           enabled = false,
+  --         },
+  --       },
+  --       null_ls = {
+  --         enabled = true,
+  --         name = "crates.nvim",
+  --       },
+  --       lsp = {
+  --         enabled = true,
+  --         actions = false,
+  --         completion = true,
+  --         hover = true,
+  --       },
+  --     }
+  --   end,
+  -- },
   {
     "cdmill/focus.nvim",
     cmd = { "Focus", "Zen", "Narrow" },

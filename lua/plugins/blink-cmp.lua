@@ -49,23 +49,52 @@ return {
         "fallback",
       },
     },
+    trigger = {
+      signature_help = {
+        enabled = true,
+      },
+    },
     windows = {
       autocomplete = {
         border = "rounded",
-        winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
       },
       documentation = {
         auto_show = true,
         border = "rounded",
-        winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
       },
       signature_help = {
         border = "rounded",
-        winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder",
+      },
+      ghost_text = {
+        enabled = false,
       },
     },
   },
   specs = {
+    {
+      "folke/lazydev.nvim",
+      optional = true,
+      specs = {
+        {
+          "Saghen/blink.cmp",
+          opts = function(_, opts)
+            if pcall(require, "lazydev.integrations.blink") then
+              return require("astrocore").extend_tbl(opts, {
+                sources = {
+                  -- add lazydev to your completion providers
+                  completion = { enabled_providers = { "lazydev" } },
+                  providers = {
+                    -- dont show LuaLS require statements when lazydev has items
+                    lsp = { fallback_for = { "lazydev" } },
+                    lazydev = { name = "LazyDev", module = "lazydev.integrations.blink" },
+                  },
+                },
+              })
+            end
+          end,
+        },
+      },
+    },
     -- disable built in completion plugins
     { "hrsh7th/nvim-cmp", enabled = false },
     { "rcarriga/cmp-dap", enabled = false },

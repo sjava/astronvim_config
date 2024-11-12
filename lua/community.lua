@@ -69,7 +69,7 @@ return {
   { import = "astrocommunity.pack.vue" },
   { import = "astrocommunity.pack.elixir-phoenix" },
   { import = "astrocommunity.pack.python-ruff" },
-  { import = "astrocommunity.pack.tailwindcss" },
+  { import = "astrocommunity.pack.html-css" },
   { import = "astrocommunity.pack.proto" },
   { import = "astrocommunity.diagnostics.trouble-nvim" },
   { import = "astrocommunity.utility.noice-nvim" },

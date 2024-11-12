@@ -78,7 +78,7 @@ return {
     opts = {
       lsp = {
         override = {
-          ["cmp.entry.get_documentation"] = false,
+          ["cmp.entry.get_documentation"] = true,
         },
         signature = {
           enabled = false,

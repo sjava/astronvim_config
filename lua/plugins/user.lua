@@ -179,14 +179,6 @@ return {
     },
   },
   {
-    "Mr-LLLLL/cool-chunk.nvim",
-    event = { "CursorHold", "CursorHoldI" },
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter",
-    },
-    config = function() require("cool-chunk").setup {} end,
-  },
-  {
     "ysmb-wtsg/in-and-out.nvim",
     keys = {
       {

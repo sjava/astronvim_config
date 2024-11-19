@@ -19,23 +19,35 @@ local prompts = {
 
 return {
   {
+    "folke/which-key.nvim",
+    optional = true,
+    opts = {
+      spec = {
+        { "<leader>a", group = "ai" },
+        { "gm", group = "+Copilot chat" },
+        { "gmh", desc = "Show help" },
+        { "gmd", desc = "Show diff" },
+        { "gmp", desc = "Show system prompt" },
+        { "gms", desc = "Show selection" },
+        { "gmy", desc = "Yank diff" },
+      },
+    },
+  },
+  {
     "CopilotC-Nvim/CopilotChat.nvim",
-    branch = "canary",
-    -- branch = "canary", -- Use the canary branch if you want to test the latest features but it might be unstable
+    branch = "canary", -- Use the canary branch if you want to test the latest features but it might be unstable
+    -- version = "v3.1.0",
     -- Do not use branch and version together, either use branch or version
     dependencies = {
-      { "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
-      { "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
+      { "nvim-telescope/telescope.nvim" }, -- Use telescope for help actions
+      { "nvim-lua/plenary.nvim" },
     },
-    build = "make tiktoken",
     opts = {
       question_header = "## User ",
       answer_header = "## Copilot ",
       error_header = "## Error ",
       prompts = prompts,
       auto_follow_cursor = false, -- Don't follow the cursor after getting response
-      show_help = true, -- Show help in virtual text, set to true if that's 1st time using Copilot Chat
-      model = "gpt-4o",
       mappings = {
         -- Use tab for completion
         complete = {
@@ -78,6 +90,10 @@ return {
         show_user_selection = {
           normal = "gms",
         },
+        -- Show help
+        show_help = {
+          normal = "gmh",
+        },
       },
     },
     config = function(_, opts)
@@ -85,16 +101,6 @@ return {
       local select = require "CopilotChat.select"
       -- Use unnamed register for the selection
       opts.selection = select.unnamed
-
-      -- Override the git prompts message
-      opts.prompts.Commit = {
-        prompt = "Write commit message for the change with commitizen convention",
-        selection = select.gitdiff,
-      }
-      opts.prompts.CommitStaged = {
-        prompt = "Write commit message for the change with commitizen convention",
-        selection = function(source) return select.gitdiff(source, true) end,
-      }
 
       chat.setup(opts)
 
@@ -141,29 +147,9 @@ return {
           if ft == "copilot-chat" then vim.bo.filetype = "markdown" end
         end,
       })
-
-      -- Add which-key mappings
-      local wk = require "which-key"
-      wk.add {
-        { "<leader>gm", group = "+Copilot Chat" }, -- group
-        { "<leader>gmd", desc = "Show diff" },
-        { "<leader>gmp", desc = "System prompt" },
-        { "<leader>gms", desc = "Show selection" },
-        { "<leader>gmy", desc = "Yank diff" },
-        { "<leader>a", group = "+Copilot Chat" }, -- group
-      }
     end,
     event = "VeryLazy",
     keys = {
-      -- Show help actions with telescope
-      {
-        "<leader>ah",
-        function()
-          local actions = require "CopilotChat.actions"
-          require("CopilotChat.integrations.telescope").pick(actions.help_actions())
-        end,
-        desc = "CopilotChat - Help actions",
-      },
       -- Show prompts actions with telescope
       {
         "<leader>ap",
@@ -212,11 +198,6 @@ return {
         "<leader>am",
         "<cmd>CopilotChatCommit<cr>",
         desc = "CopilotChat - Generate commit message for all changes",
-      },
-      {
-        "<leader>aM",
-        "<cmd>CopilotChatCommitStaged<cr>",
-        desc = "CopilotChat - Generate commit message for staged changes",
       },
       -- Quick chat with Copilot
       {

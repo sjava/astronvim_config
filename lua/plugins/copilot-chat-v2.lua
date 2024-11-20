@@ -36,10 +36,12 @@ return {
   {
     "CopilotC-Nvim/CopilotChat.nvim",
     branch = "canary", -- Use the canary branch if you want to test the latest features but it might be unstable
+    build = "make tiktoken",
     -- version = "v3.1.0",
     -- Do not use branch and version together, either use branch or version
     dependencies = {
-      { "nvim-telescope/telescope.nvim" }, -- Use telescope for help actions
+      { "zbirenbaum/copilot.lua" },
+      { "nvim-telescope/telescope.nvim" },
       { "nvim-lua/plenary.nvim" },
     },
     opts = {

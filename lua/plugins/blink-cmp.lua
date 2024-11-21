@@ -8,11 +8,31 @@ return {
     "Saghen/blink.cmp",
     event = "InsertEnter",
     build = "cargo build --release",
-    dependencies = { "rafamadriz/friendly-snippets" },
+    dependencies = { "rafamadriz/friendly-snippets", "mikavilpas/blink-ripgrep.nvim" },
     opts_extend = { "sources.completion.enabled_providers" },
     opts = {
       -- remember to enable your providers here
-      sources = { completion = { enabled_providers = { "lsp", "path", "snippets", "buffer" } } },
+      sources = {
+        completion = {
+          enabled_providers = {
+            "lsp",
+            "path",
+            "snippets",
+            "buffer",
+            "ripgrep",
+          },
+        },
+        providers = {
+          ripgrep = {
+            module = "blink-ripgrep",
+            name = "Ripgrep",
+            opts = {
+              prefix_min_len = 3,
+              context_size = 5,
+            },
+          },
+        },
+      },
       -- experimental auto-brackets support
       accept = { auto_brackets = { enabled = true } },
       keymap = {
@@ -77,7 +97,6 @@ return {
     specs = {
       {
         "folke/lazydev.nvim",
-        optional = true,
         specs = {
           {
             "Saghen/blink.cmp",

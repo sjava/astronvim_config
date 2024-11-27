@@ -20,6 +20,7 @@ vim.filetype.add {
     wxss = "css",
     mpx = "vue",
     http = "http",
+    wxs = "javascript",
   },
 }
 

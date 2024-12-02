@@ -23,42 +23,42 @@ return {
         },
       },
       -- experimental auto-brackets support
-      accept = { auto_brackets = { enabled = true } },
-      keymap = {
-        ["<C-Space>"] = { "show", "show_documentation", "hide_documentation" },
-        ["<Up>"] = { "select_prev", "fallback" },
-        ["<Down>"] = { "select_next", "fallback" },
-        ["<C-N>"] = { "select_next", "show" },
-        ["<C-P>"] = { "select_prev", "show" },
-        ["<C-J>"] = { "select_next", "fallback" },
-        ["<C-K>"] = { "select_prev", "fallback" },
-        ["<C-U>"] = { "scroll_documentation_up", "fallback" },
-        ["<C-D>"] = { "scroll_documentation_down", "fallback" },
-        ["<C-e>"] = { "hide", "fallback" },
-        ["<CR>"] = { "accept", "fallback" },
-        ["<Tab>"] = {
-          function(cmp)
-            if cmp.windows.autocomplete.win:is_open() then
-              return cmp.select_next()
-            elseif cmp.is_in_snippet() then
-              return cmp.snippet_forward()
-            elseif has_words_before() then
-              return cmp.show()
-            end
-          end,
-          "fallback",
-        },
-        ["<S-Tab>"] = {
-          function(cmp)
-            if cmp.windows.autocomplete.win:is_open() then
-              return cmp.select_prev()
-            elseif cmp.is_in_snippet() then
-              return cmp.snippet_backward()
-            end
-          end,
-          "fallback",
-        },
-      },
+      accept = { auto_brackets = { enabled = false } },
+      -- keymap = {
+      --   ["<C-Space>"] = { "show", "show_documentation", "hide_documentation" },
+      --   ["<Up>"] = { "select_prev", "fallback" },
+      --   ["<Down>"] = { "select_next", "fallback" },
+      --   ["<C-N>"] = { "select_next", "show" },
+      --   ["<C-P>"] = { "select_prev", "show" },
+      --   ["<C-J>"] = { "select_next", "fallback" },
+      --   ["<C-K>"] = { "select_prev", "fallback" },
+      --   ["<C-U>"] = { "scroll_documentation_up", "fallback" },
+      --   ["<C-D>"] = { "scroll_documentation_down", "fallback" },
+      --   ["<C-e>"] = { "hide", "fallback" },
+      --   ["<CR>"] = { "accept", "fallback" },
+      --   ["<Tab>"] = {
+      --     function(cmp)
+      --       if cmp.windows.autocomplete.win:is_open() then
+      --         return cmp.select_next()
+      --       elseif cmp.is_in_snippet() then
+      --         return cmp.snippet_forward()
+      --       elseif has_words_before() then
+      --         return cmp.show()
+      --       end
+      --     end,
+      --     "fallback",
+      --   },
+      --   ["<S-Tab>"] = {
+      --     function(cmp)
+      --       if cmp.windows.autocomplete.win:is_open() then
+      --         return cmp.select_prev()
+      --       elseif cmp.is_in_snippet() then
+      --         return cmp.snippet_backward()
+      --       end
+      --     end,
+      --     "fallback",
+      --   },
+      -- },
       trigger = {
         signature_help = {
           enabled = true,

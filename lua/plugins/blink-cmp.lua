@@ -10,29 +10,20 @@ return {
       sources = {
         default = { "lsp", "path", "snippets", "buffer" },
       },
-      -- experimental auto-brackets support
-      accept = { auto_brackets = { enabled = false } },
-      trigger = {
-        signature_help = {
-          enabled = true,
-        },
-      },
-      windows = {
-        autocomplete = {
-          border = "rounded",
-          winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
-        },
-        documentation = {
-          auto_show = true,
-          border = "rounded",
-          winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
-        },
-        signature_help = {
+      signature = {
+        enabled = true,
+        window = {
           border = "rounded",
           winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder",
         },
-        ghost_text = {
-          enabled = false,
+      },
+      completion = {
+        documentation = {
+          auto_show = true,
+          window = {
+            border = "rounded",
+            winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
+          },
         },
       },
     },

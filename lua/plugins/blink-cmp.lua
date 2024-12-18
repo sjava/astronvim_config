@@ -6,7 +6,6 @@ return {
     dependencies = { "rafamadriz/friendly-snippets" },
     opts_extend = { "sources.default" },
     opts = {
-      -- remember to enable your providers here
       sources = {
         default = { "lsp", "path", "snippets", "buffer" },
       },
@@ -17,15 +16,40 @@ return {
           winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder",
         },
       },
+      keymap = {
+        ["<Tab>"] = { "select_next", "fallback" }, -- snippets
+        ["<S-Tab>"] = { "select_prev", "fallback" },
+        ["<C-y>"] = { "accept", "fallback" },
+        ["<C-l>"] = { "show", "hide", "fallback" },
+        ["<C-_>"] = { "cancel", "fallback" },
+        ["<C-Space>"] = { "show_documentation", "hide_documentation", "fallback" },
+        ["<C-f>"] = { "scroll_documentation_down", "fallback" },
+        ["<C-b>"] = { "scroll_documentation_up", "fallback" },
+      },
       completion = {
+        list = { selection = "auto_insert" },
+        accept = { auto_brackets = { enabled = false } },
         documentation = {
           auto_show = true,
+          auto_show_delay_ms = 0,
           window = {
             border = "rounded",
             winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
           },
         },
+        menu = {
+          draw = { columns = { { "label", "label_description", gap = 1 }, { "kind" } } },
+        },
       },
+      -- completion = {
+      --   documentation = {
+      --     auto_show = true,
+      --     window = {
+      --       border = "rounded",
+      --       winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
+      --     },
+      --   },
+      -- },
     },
     specs = {
       {

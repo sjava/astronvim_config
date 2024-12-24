@@ -3,6 +3,39 @@ local function has_words_before()
   return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match "%s" == nil
 end
 
+local function get_icon_provider()
+  local _, mini_icons = pcall(require, "mini.icons")
+  if _G.MiniIcons then
+    return function(kind) return mini_icons.get("lsp", kind or "") end
+  end
+  local lspkind_avail, lspkind = pcall(require, "lspkind")
+  if lspkind_avail then
+    return function(kind) return lspkind.symbolic(kind, { mode = "symbol" }) end
+  end
+end
+---@type function|false|nil
+local icon_provider = false
+
+local function get_icon(ctx)
+  ctx.kind_hl_group = "BlinkCmpKind" .. ctx.kind
+  if ctx.item.source_name == "LSP" then
+    local item_doc, color_item = ctx.item.documentation, nil
+    if item_doc then
+      local highlight_colors_avail, highlight_colors = pcall(require, "nvim-highlight-colors")
+      color_item = highlight_colors_avail and highlight_colors.format(item_doc, { kind = ctx.kind })
+    end
+    if icon_provider == false then icon_provider = get_icon_provider() end
+    if icon_provider then
+      local icon = icon_provider(ctx.kind)
+      if icon then ctx.kind_icon = icon end
+    end
+    if color_item and color_item.abbr and color_item.abbr_hl_group then
+      ctx.kind_icon, ctx.kind_hl_group = color_item.abbr, color_item.abbr_hl_group
+    end
+  end
+  return ctx
+end
+
 return {
   {
     "Saghen/blink.cmp",
@@ -13,6 +46,10 @@ return {
     opts = {
       sources = {
         default = { "lsp", "path", "snippets", "buffer" },
+        min_keyword_length = function(ctx)
+          if ctx.mode == "cmdline" and string.find(ctx.line, " ") == nil then return 2 end
+          return 0
+        end,
       },
       signature = {
         enabled = true,
@@ -71,16 +108,11 @@ return {
           draw = {
             components = {
               kind_icon = {
-                ellipsis = false,
                 text = function(ctx)
-                  local kind_icon, _, _ = require("mini.icons").get("lsp", ctx.kind)
-                  return kind_icon
+                  get_icon(ctx)
+                  return ctx.kind_icon .. ctx.icon_gap
                 end,
-                -- Optionally, you may also use the highlights from mini.icons
-                highlight = function(ctx)
-                  local _, hl, _ = require("mini.icons").get("lsp", ctx.kind)
-                  return hl
-                end,
+                highlight = function(ctx) return get_icon(ctx).kind_hl_group end,
               },
             },
           },
@@ -88,6 +120,14 @@ return {
       },
     },
     specs = {
+      {
+        "AstroNvim/astrolsp",
+        optional = true,
+        opts = function(_, opts)
+          opts.capabilities =
+            require("astrocore").extend_tbl(opts.capabilities, require("blink.cmp").get_lsp_capabilities())
+        end,
+      },
       {
         "folke/lazydev.nvim",
         optional = true,
@@ -103,10 +143,6 @@ return {
                     providers = {
                       lazydev = { name = "LazyDev", module = "lazydev.integrations.blink", score_offset = 100 },
                     },
-                    min_keyword_length = function(ctx)
-                      if ctx.mode == "cmdline" and string.find(ctx.line, " ") == nil then return 2 end
-                      return 0
-                    end,
                   },
                 })
               end
@@ -121,16 +157,5 @@ return {
       { "petertriho/cmp-git", enabled = false },
       { "onsails/lspkind.nvim", enabled = false },
     },
-  },
-  {
-    "neovim/nvim-lspconfig",
-    dependencies = { "saghen/blink.cmp" },
-    config = function(_, opts)
-      local lspconfig = require "lspconfig"
-      for server, config in pairs(opts.servers or {}) do
-        config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
-        lspconfig[server].setup(config)
-      end
-    end,
   },
 }

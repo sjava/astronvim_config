@@ -110,6 +110,10 @@ return {
   { import = "astrocommunity.recipes.vscode-icons" },
 
   { import = "astrocommunity.icon.mini-icons" },
+  {
+    "echasnovski/mini.icons",
+    lazy = false,
+  },
 
   { import = "astrocommunity.color.nvim-highlight-colors" },
   {

@@ -93,11 +93,7 @@ return {
           "fallback",
         },
       },
-      enabled = function()
-        return not vim.tbl_contains({ "markdown" }, vim.bo.filetype)
-          and vim.bo.buftype ~= "prompt"
-          and vim.b.completion ~= false
-      end,
+      enabled = function() return vim.bo.buftype ~= "prompt" and vim.b.completion ~= false end,
       completion = {
         documentation = {
           auto_show = true,
@@ -113,6 +109,7 @@ return {
           auto_show = function(ctx)
             return ctx.mode ~= "cmdline" or not vim.tbl_contains({ "/", "?" }, vim.fn.getcmdtype())
           end,
+
           draw = {
             components = {
               kind_icon = {

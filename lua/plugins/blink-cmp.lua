@@ -46,10 +46,6 @@ return {
     opts = {
       sources = {
         default = { "lsp", "path", "snippets", "buffer" },
-        min_keyword_length = function(ctx)
-          if ctx.mode == "cmdline" and string.find(ctx.line, " ") == nil then return 3 end
-          return 0
-        end,
       },
       signature = {
         enabled = true,
@@ -71,30 +67,18 @@ return {
         ["<C-e>"] = { "hide", "fallback" },
         ["<CR>"] = { "accept", "fallback" },
         ["<Tab>"] = {
+          "select_next",
+          "snippet_forward",
           function(cmp)
-            if cmp.is_visible() then
-              return cmp.select_next()
-            elseif cmp.snippet_active { direction = 1 } then
-              return cmp.snippet_forward()
-            elseif has_words_before() then
-              return cmp.show()
-            end
+            if has_words_before() then return cmp.show() end
           end,
           "fallback",
         },
-        ["<S-Tab>"] = {
-          function(cmp)
-            if cmp.is_visible() then
-              return cmp.select_prev()
-            elseif cmp.snippet_active { direction = -1 } then
-              return cmp.snippet_backward()
-            end
-          end,
-          "fallback",
-        },
+        ["<S-Tab>"] = { "select_prev", "snippet_backward", "fallback" },
       },
       enabled = function() return vim.bo.buftype ~= "prompt" and vim.b.completion ~= false end,
       completion = {
+        list = { selection = function(ctx) return ctx.mode == "cmdline" and "auto_insert" or "preselect" end },
         documentation = {
           auto_show = true,
           auto_show_delay_ms = 200,
@@ -159,7 +143,6 @@ return {
       { "hrsh7th/nvim-cmp", enabled = false },
       { "rcarriga/cmp-dap", enabled = false },
       { "L3MON4D3/LuaSnip", enabled = false },
-      { "petertriho/cmp-git", enabled = false },
       { "onsails/lspkind.nvim", enabled = false },
     },
   },

@@ -89,15 +89,22 @@ return {
           "select_next",
           "snippet_forward",
           function(cmp)
-            if has_words_before() then return cmp.show() end
+            if has_words_before() or vim.api.nvim_get_mode().mode == "c" then return cmp.show() end
           end,
           "fallback",
         },
-        ["<S-Tab>"] = { "select_prev", "snippet_backward", "fallback" },
+        ["<S-Tab>"] = {
+          "select_prev",
+          "snippet_backward",
+          function(cmp)
+            if vim.api.nvim_get_mode().mode == "c" then return cmp.show() end
+          end,
+          "fallback",
+        },
       },
       enabled = function() return vim.bo.buftype ~= "prompt" and vim.b.completion ~= false end,
       completion = {
-        list = { selection = function(ctx) return ctx.mode == "cmdline" and "auto_insert" or "preselect" end },
+        list = { selection = { preselect = true, auto_insert = true } },
         documentation = {
           auto_show = true,
           auto_show_delay_ms = 200,
@@ -109,9 +116,7 @@ return {
         menu = {
           border = "rounded",
           winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
-          auto_show = function(ctx)
-            return ctx.mode ~= "cmdline" or not vim.tbl_contains({ "/", "?" }, vim.fn.getcmdtype())
-          end,
+          auto_show = function(ctx) return ctx.mode ~= "cmdline" end,
 
           draw = {
             components = {

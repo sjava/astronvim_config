@@ -36,6 +36,7 @@ return {
   {
     "CopilotC-Nvim/CopilotChat.nvim",
     -- version = "v3.3.0", -- Use a specific version to prevent breaking changes
+    branch = "main",
     dependencies = {
       { "nvim-telescope/telescope.nvim" }, -- Use telescope for help actions
       { "nvim-lua/plenary.nvim" },

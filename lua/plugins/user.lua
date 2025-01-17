@@ -169,11 +169,7 @@ return {
   {
     "OXY2DEV/markview.nvim",
     lazy = false, -- Recommended
-    -- ft = "markdown" -- If you decide to lazy-load anyway
     dependencies = {
-      -- You will not need this if you installed the
-      -- parsers manually
-      -- Or if the parsers are in your $RUNTIMEPATH
       "nvim-treesitter/nvim-treesitter",
       "nvim-tree/nvim-web-devicons",
     },
@@ -220,95 +216,10 @@ return {
     },
   },
   {
-    "3rd/image.nvim",
-    enabled = function() return not vim.g.neovide end,
-    config = function() require("image").setup {} end,
-  },
-  {
-    "3rd/diagram.nvim",
-    enabled = function() return not vim.g.neovide end,
-    ft = { "markdown" },
-    dependencies = {
-      "3rd/image.nvim",
-    },
-    opts = { -- you can just pass {}, defaults below
-      renderer_options = {
-        mermaid = {
-          background = nil, -- nil | "transparent" | "white" | "#hex"
-          theme = nil, -- nil | "default" | "dark" | "forest" | "neutral"
-        },
-      },
-    },
-  },
-  {
-    "letieu/jot.lua",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    config = function()
-      require("jot").setup { notes_dir = "~/jot" }
-      vim.keymap.set("n", "<leader>fj", function() require("jot").open() end, { desc = "Open jot" })
-    end,
-  },
-  {
     "felpafel/inlay-hint.nvim",
     event = "LspAttach",
     config = true,
   },
-  -- {
-  --   "Saghen/blink.cmp",
-  --   event = "InsertEnter",
-  --   build = "cargo build --release",
-  --   dependencies = { "rafamadriz/friendly-snippets" },
-  --   opts = {
-  --     highlight = { use_nvim_cmp_as_default = true },
-  --     nerd_font_variant = "mono",
-  --     trigger = {
-  --       signature_help = { enabled = true },
-  --     },
-  --     keymap = { preset = "enter" },
-  --     windows = {
-  --       autocomplete = {
-  --         border = "rounded",
-  --       },
-  --       documentation = {
-  --         auto_show = true,
-  --         border = "rounded",
-  --       },
-  --       signature_help = {
-  --         border = "rounded",
-  --       },
-  --     },
-  --   },
-  --   specs = {
-  --     -- disable built in completion plugins
-  --     { "hrsh7th/nvim-cmp", enabled = false },
-  --     { "rcarriga/cmp-dap", enabled = false },
-  --     { "L3MON4D3/LuaSnip", enabled = false },
-  --     { "onsails/lspkind.nvim", enabled = false },
-  --   },
-  -- },
-  -- {
-  --   "saecki/crates.nvim",
-  --   event = { "BufRead Cargo.toml" },
-  --   config = function()
-  --     require("crates").setup {
-  --       completion = {
-  --         cmp = {
-  --           enabled = false,
-  --         },
-  --       },
-  --       null_ls = {
-  --         enabled = true,
-  --         name = "crates.nvim",
-  --       },
-  --       lsp = {
-  --         enabled = true,
-  --         actions = false,
-  --         completion = true,
-  --         hover = true,
-  --       },
-  --     }
-  --   end,
-  -- },
   {
     "cdmill/focus.nvim",
     cmd = { "Focus", "Zen", "Narrow" },

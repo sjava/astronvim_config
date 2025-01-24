@@ -78,7 +78,10 @@ return {
     "Saghen/blink.cmp",
     event = { "InsertEnter", "CmdlineEnter" },
     build = "cargo build --release",
-    dependencies = { "rafamadriz/friendly-snippets", "mikavilpas/blink-ripgrep.nvim" },
+    dependencies = {
+      "rafamadriz/friendly-snippets",
+      "mikavilpas/blink-ripgrep.nvim",
+    },
     opts_extend = { "sources.default", "sources.cmdline" },
     opts = {
       sources = {

@@ -5,22 +5,20 @@ return {
     "nvim-treesitter/nvim-treesitter",
   },
   config = function()
-    require("codecompanion").setup({
+    require("codecompanion").setup {
       adapters = {
         deepseek = function()
-          return require("codecompanion.adapters").extend("openai_compatible", {
+          return require("codecompanion.adapters").extend("deepseek", {
             env = {
-              url = "https://api.deepseek.com",
               api_key = "DEEPSEEK_API_KEY",
             },
           })
         end,
       },
       strategies = {
-        chat = { adapter = "deepseek", },
+        chat = { adapter = "deepseek" },
         inline = { adapter = "deepseek" },
-        agent = { adapter = "deepseek" },
       },
-    })
-  end
+    }
+  end,
 }

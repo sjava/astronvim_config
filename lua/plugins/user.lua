@@ -171,8 +171,9 @@ return {
     lazy = false, -- Recommended
     ft = { "markdown", "codecompanion" },
     opts = {
-      filetypes = { "markdown", "codecompanion" },
-      buf_ignore = {},
+      preview = {
+        filetypes = { "markdown", "codecompanion" },
+      },
     },
     dependencies = {
       "nvim-treesitter/nvim-treesitter",

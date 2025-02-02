@@ -39,6 +39,7 @@ return {
     -- enable servers that you already have installed without mason
     servers = {
       -- "pyright"
+      "kulala_ls",
     },
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
@@ -57,6 +58,9 @@ return {
       --     },
       --   },
       -- },
+      ["kulala_ls"] = {
+        capabilities = vim.lsp.protocol.make_client_capabilities(),
+      },
       ["rust-analyzer"] = {
         capabilities = {
           workspace = {

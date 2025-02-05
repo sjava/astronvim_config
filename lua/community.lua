@@ -122,7 +122,6 @@ return {
     opts = { enable_tailwind = true },
   },
 
-  { import = "astrocommunity.neovim-lua-development.lazydev-nvim" },
   { import = "astrocommunity.neovim-lua-development.helpview-nvim" },
 
   { import = "astrocommunity.completion.copilot-lua" },

@@ -35,7 +35,7 @@ return {
     end,
   },
   {
-    "vim-test/vim-test",
+    "sjava/vim-test",
     event = "User AstroFile",
   },
   {

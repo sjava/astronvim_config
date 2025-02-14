@@ -36,14 +36,12 @@ return {
         -- NOTE: `mapleader` and `maplocalleader` must be set in the AstroNvim opts or before `lazy.setup`
         -- This can be found in the `lua/lazy_setup.lua` file
         python3_host_prog = "python",
-        -- ["test#strategy"] = "wezterm",
         ["test#strategy"] = "shtuff",
         shtuff_receiver = "devrunner",
-        ["test#rust#runner"] = "cargotest",
-        -- ["test#rust#cargotest#test_options"] = "-- --nocapture",
-        ["test#rust#cargotest#test_options"] = {
-          nearest = { "--", "--nocapture" },
-        },
+        ["test#rust#runner"] = "cargonextest",
+        -- ["test#rust#cargotest#test_options"] = {
+        --   nearest = { "--", "--nocapture" },
+        -- },
       },
     },
     -- Mappings can be configured through AstroCore as well.

@@ -82,7 +82,7 @@ return {
       "rafamadriz/friendly-snippets",
       "mikavilpas/blink-ripgrep.nvim",
     },
-    opts_extend = { "sources.default", "sources.cmdline" },
+    opts_extend = { "sources.default", "cmdline.sources", "term.sources" },
     opts = {
       sources = {
         default = { "lsp", "path", "snippets", "buffer", "ripgrep" },

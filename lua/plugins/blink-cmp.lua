@@ -77,7 +77,7 @@ return {
   {
     "Saghen/blink.cmp",
     event = { "InsertEnter", "CmdlineEnter" },
-    build = "cargo build --release",
+    version = "0.*",
     dependencies = {
       "rafamadriz/friendly-snippets",
       "mikavilpas/blink-ripgrep.nvim",

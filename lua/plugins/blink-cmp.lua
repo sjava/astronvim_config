@@ -1,5 +1,8 @@
 return {
   "Saghen/blink.cmp",
+  opts = {
+    signature = { enabled = true },
+  },
   specs = {
     "mikavilpas/blink-ripgrep.nvim",
     specs = {

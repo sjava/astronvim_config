@@ -132,6 +132,7 @@ return {
 
   { import = "astrocommunity.neovim-lua-development.helpview-nvim" },
 
+  { import = "astrocommunity.completion.blink-cmp" },
   { import = "astrocommunity.completion.copilot-lua" },
   {
     "zbirenbaum/copilot.lua",
